@@ -1,0 +1,145 @@
+/* 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 .section-title {
+    margin: 50px 0px 50px 0px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.img-responsive {
+    margin: 8px;
+    transition: 0.5s ease;
+}
+
+.img-responsive:hover {
+    box-shadow: 4px 5px 5px 4px #888888;
+    border-radius: 10px;
+}
+
+#portfolio .portfolio-list {
+    margin-bottom: 50px;
+}
+
+#portfolio .portfolio-list .nav {
+    display: inline-block;
+}
+
+#portfolio .portfolio-list .nav li {
+    margin: 10px 30px 10px 30px;
+    font-size: 16px;
+    color: #00;
+    line-height: 16px;
+    cursor: pointer;
+    font-family: 'Josefin sans', Sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    float: none;
+    display: inline-block;
+}
+
+#portfolio .portfolio-list .nav li:hover,
+#portfolio .portfolio-list .nav li.filter-active {
+    color: rgb(50, 216, 119);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.portfolio-thumbnail {
+    margin-bottom: 10px;
+    overflow: hidden;
+    min-height: 260px;
+}
+
+.portfolio-thumbnail img {
+    width: 400px;
+    height: 250px;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+.section-title span {
+    color: rgb(50, 216, 119);
+}
+
+
+/* * {
+    margin: 0px;
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(187, 243, 187);
+}
+
+.top {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    padding: 20px;
+    padding-top: 30px;
+}
+
+#gallery {
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box {
+    width: 20%;
+    padding: 7px;
+    padding-left: 10px;
+    display: block;
+}
+
+img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+img:hover {
+    transform: scale(1.3, 1.3);
+    transition: .3s transform;
+}
+
+.buttons {
+    margin-top: 30px;
+    position: relative;
+    right: 0;
+}
+
+.buttons a {
+    background-color: #f15151;
+    margin: 20px 0px 0px 20px;
+    border-radius: 5px;
+    border: 2px solid #366473;
+    padding: 5px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.buttons a:hover {
+    background-color: #f55353;
+} */
+
+*/
