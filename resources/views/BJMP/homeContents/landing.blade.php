@@ -25,6 +25,9 @@
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
                 class="active" aria-current="true"></button>
         </div>
+
+
+
         <div class="carousel-inner">
             <div class="carousel-item">
                 <img src="./img/1-covid.jpg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
@@ -70,6 +73,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="carousel-item active">
                 <img src="./img/3-covid.jpg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -85,6 +89,7 @@
                 </div>
             </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -294,7 +299,7 @@
                                 <span>Appointment Form    / </span>
                             </a>
                             <a href="https://www.facebook.com/losbanos.municipaljail">
-                                <i class="fa-brands fa-facebook-square"></i>
+                                <i class="fa-brands fa-facebook"></i>
                                 <span>Facebook</span>
                             </a>
                         </div>

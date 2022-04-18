@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Pdl;
+use App\Models\PdlRecyclebin;
 use Illuminate\Http\Request;
 
 class PdlController extends Controller
@@ -15,10 +16,10 @@ class PdlController extends Controller
      */
     public function index()
     {
-        $records=Pdl::all();
-        $count=Contact::count();
+        $records = Pdl::all();
+        $count = Contact::count();
         $messages = Contact::paginate(5);
-        return view('BJMP.admin.records.pdl.index',compact('records','count','messages'));
+        return view('BJMP.admin.records.pdl.index', compact('records', 'count', 'messages'));
     }
 
     /**
@@ -28,8 +29,8 @@ class PdlController extends Controller
      */
     public function create()
     {
-        $records=Pdl::all();
-        return view('BJMP.admin.records.pdl.pdf',compact('records'));
+        $records = Pdl::all();
+        return view('BJMP.admin.records.pdl.pdf', compact('records'));
     }
 
     /**
@@ -83,27 +84,24 @@ class PdlController extends Controller
             Request()->all()
         );
 
+        /*  $pdl->name = $request->input('name');
+         $pdl->birthdate = $request->input('birthdate');
+         $pdl->address = $request->input('address');
+         $pdl->religion = $request->input('religion');
+         $pdl->civil_status = $request->input('civil_status');
+         $pdl->built= $request->input('built');
+         $pdl->complexion = $request->input('complexion');
+         $pdl->eye_color = $request->input('eye_color');
+         $pdl->sex = $request->input('sex');
+         $pdl->blood_type = $request->input('blood_type');
+         $pdl->educational_attainment = $request->input('educational_attainment');
+         $pdl->date_of_commitment = $request->input('date_of_commitment');
+         $pdl->offense = $request->input('offense');
+         $pdl->case_number = $request->input('case_number'); */
 
 
 
         return redirect()->route('pdl.index');
-
-       /*  $pdl->name = $request->input('name');
-        $pdl->birthdate = $request->input('birthdate');
-        $pdl->address = $request->input('address');
-        $pdl->religion = $request->input('religion');
-        $pdl->civil_status = $request->input('civil_status');
-        $pdl->built= $request->input('built');
-        $pdl->complexion = $request->input('complexion');
-        $pdl->eye_color = $request->input('eye_color');
-        $pdl->sex = $request->input('sex');
-        $pdl->blood_type = $request->input('blood_type');
-        $pdl->educational_attainment = $request->input('educational_attainment');
-        $pdl->date_of_commitment = $request->input('date_of_commitment');
-        $pdl->offense = $request->input('offense');
-        $pdl->case_number = $request->input('case_number'); */
-
-
     }
 
     /**
@@ -114,6 +112,26 @@ class PdlController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pdl = Pdl::find($id);
+        $pdlrecyclebin = new PdlRecyclebin();
+dd($pdl);
+        $pdl->name = $pdl->name;
+        $pdl->birthdate = $pdl->birthdate;
+        $pdl->address = $pdl->address;
+        $pdl->religion = $pdl->religion;
+        $pdl->civil_status = $pdl->civil_status;
+        $pdl->built = $pdl->built;
+        $pdl->complexion = $pdl->complexion;
+        $pdl->eye_color = $pdl->eye_color;
+        $pdl->sex = $pdl->sex;
+        $pdl->blood_type = $pdl->blood_type;
+        $pdl->educational_attainment = $pdl->educational_attainment;
+        $pdl->date_of_commitment = $pdl->date_of_commitment;
+        $pdl->offense = $pdl->offense;
+        $pdl->case_number = $pdl->case_number;
+        $pdlrecyclebin->deleted_date = now();
+        $pdlrecyclebin->save();
+        $pdl->delete();
+        return redirect()->route('pdl.index');
     }
 }

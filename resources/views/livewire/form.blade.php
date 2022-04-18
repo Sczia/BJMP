@@ -287,6 +287,8 @@
                 </div>
             </div>
         @endif
+
+
         @if ($currentStep == 2)
             <div class="step-two">
                 <div class="card">

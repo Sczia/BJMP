@@ -12,19 +12,10 @@
             <div class="modal-body">
                 <p> Are you sure you want to deleted This information? and move to recycle bin?</p>
 
-                <form action="{{ route('medical.recyclebin.store') }}" method="POST">
+                <form action="{{ route('medical.destroy',$record->id) }}" method="POST">
                     @csrf
-                    <input type="hidden" name="id" value="{{ $record->id }}">
-                    <input type="hidden" name="name" value="{{ $record->name }}">
-                    <input type="hidden" name="birthdate" value="{{ $record->birthdate }}">
-                    <input type="hidden" name="age" value="{{ $record->age }}">
-                    <input type="hidden" name="address" value="{{ $record->address }}">
-                    <input type="hidden" name="emergency_contact" value="{{ $record->emergency_contact }}">
-                    <input type="hidden" name="relationship" value="{{ $record->relationship }}">
-                    <input type="hidden" name="allergies" value="{{ $record->allergies }}">
-                    <input type="hidden" name="current_medication" value="{{ $record->current_medication }}">
-                    <input type="hidden" name="current_health_status" value="{{ $record->current_health_status }}">
-                    <input type="hidden" name="medical_history" value="{{ $record->medical_history }}">
+                    @method('DELETE')
+
 
 
                     <div class="modal-footer">

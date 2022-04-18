@@ -57,6 +57,25 @@ class ConfirmController extends Controller
         $confirm->prisoner_relationship = $request->input('prisoner_relationship');
         $confirm->phone_number = $request->input('phone_number');
         $confirm->health_poll = $request->input('health_poll');
+
+        $confirm->temp= $request->input('temp');
+        $confirm->resp= $request->input('resp');
+        $confirm->eq_resp= $request->input('eq_resp');
+        $confirm->travel= $request->input('travel');
+        $confirm->eq_travel= $request->input('eq_travel');
+        $confirm->history= $request->input('history');
+        $confirm->eq_history= $request->input('eq_history');
+        $confirm->hospital= $request->input('hospital');
+        $confirm->eq_hospital= $request->input('eq_hospital');
+        $confirm->public= $request->input('public');
+        $confirm->eq_public= $request->input('eq_public');
+        $confirm->close= $request->input('close');
+        $confirm->front= $request->input('front');
+        $confirm->eq_front= $request->input('eq_front');
+        $confirm->place= $request->input('place');
+        $confirm->eq_place= $request->input('eq_place');
+
+
         $confirm->save();
         $details = [
             'title' => 'Mail from Municipal Jail of Los Banos',

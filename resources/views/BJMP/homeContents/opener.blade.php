@@ -1,6 +1,6 @@
 @extends('BJMP.mainlayout')
 @section('page-level-css')
-<link rel="stylesheet" href="{{asset('./css/opening.css')}}">   
+<link rel="stylesheet" href="{{asset('./css/opening.css')}}">
 @endsection
 @section('contents')
 
@@ -25,5 +25,5 @@
         </div>
     </div>
 </div>
-    
+
 @endsection

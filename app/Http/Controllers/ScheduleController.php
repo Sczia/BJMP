@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Contact;
-use Illuminate\Console\Scheduling\Schedule;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -73,7 +74,7 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $schedules = Schedule::findOrFail($id);
+        $schedules =Schedule::findOrFail($id);
 
         $schedules->day = $request->input('day');
         $schedules->time = $request->input('time');

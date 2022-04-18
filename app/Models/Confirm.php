@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Confirm extends Model
 {
 
-        protected $table = 'confirm';
+        protected $table = 'confirms';
         public $timestamps = false;
         public $guarded = [];
 

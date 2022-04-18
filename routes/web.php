@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnnouncementController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ConfirmController;
 use App\Http\Controllers\ContactController;
@@ -14,8 +15,10 @@ use App\Http\Controllers\PaabotController;
 use App\Http\Controllers\PdlController;
 use App\Http\Controllers\PdlRecyclebinController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\ScheduleController;
 use App\Mail\Email;
 use App\Mail\WelcomeMail;
+use App\Models\Appointment;
 use App\PdlRecyclebin;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Mail;
@@ -52,9 +55,9 @@ Route::get('/health', [homeContents::class,'health']) -> name('health');
 Route::get('/admin', [DashboardController::class,'index']) -> name('admin');
 
 //PENDING//
-Route::get('admin/pending', [RequestController::class,'index']) -> name('pending.index');
-Route::post('admin/pending/confirm', [ConfirmController::class,'store']) -> name('confirm.store');
-Route::delete('admin/pending', [RequestController::class,'destroy']) -> name('pending.destroy');
+Route::get('admin/appointment', [AppointmentController::class,'index']) -> name('pending.index');
+Route::post('admin/appointment/confirm', [ConfirmController::class,'store']) -> name('confirm.store');
+Route::delete('admin/appointment', [AppointmentController::class,'destroy']) -> name('pending.destroy');
 
 
 //pending table confirm button//
@@ -68,6 +71,8 @@ Route::get('admin/confirmed', [ConfirmedController::class,'index']) -> name('con
 Route::get('admin/medical', [MedicalController::class,'index']) -> name('medical.index');
 Route::put('/medical/{id}', [MedicalController::class,'update'])-> name('medical.update');
 Route::post('admin/medical', [MedicalController::class,'store'])-> name('medical.store');
+Route::delete('admin/medical/{id}', [MedicalController::class,'destroy'])-> name('medical.destroy');
+
 Route::get('admin/medical/download', [MedicalController::class,'create'])-> name('medical.create');
 
 
@@ -75,16 +80,20 @@ Route::get('admin/medical/download', [MedicalController::class,'create'])-> name
 Route::get('admin/pdl', [PdlController::class,'index']) -> name('pdl.index');
 Route::put('/pdl/{id}', [PdlController::class,'update'])-> name('pdl.update');
 Route::post('admin/pdl', [PdlController::class,'store'])-> name('pdl.store');
+Route::delete('admin/pdl/{id}', [PdlController::class,'destroy'])-> name('pdl.destroy');
+
 Route::get('admin/pdl/download', [PdlController::class,'create'])-> name('pdl.create');
 //
 
 //RECYCLEBIN//
 Route::get('admin/recyclebin/medical', [MedicalRecyclebinController::class,'index']) -> name('medical.recyclebin.index');
 Route::post('admin/recyclebin/medical', [MedicalRecyclebinController::class,'store']) -> name('medical.recyclebin.store');
+Route::delete('/admin/recyclebin/medical/{id}', [MedicalRecyclebinController::class,'destroy'])-> name('medical.recyclebin.destroy');
+
 
 Route::get('admin/recyclebin/pdl', [PdlRecyclebinController::class,'index']) -> name('pdl.recyclebin.index');
 Route::post('admin/recyclebin/pdl', [PdlRecyclebinController::class,'store']) -> name('pdl.recyclebin.store');
-
+Route::delete('/admin/recyclebin/pdl/{id}', [PdlRecyclebinController::class,'destroy'])-> name('pdl.recyclebin.destroy');
 
 /* ATTENDAMCE */
 Route::get('admin/attendance', [AttendanceController::class,'index']) -> name('attendance.index');
@@ -102,14 +111,10 @@ Route::delete('admin/health', [HealthController::class,'destroy']) -> name('heal
 
 
 /* SCHEDULE */
-Route::get('admin/paabot', [PaabotController::class,'index']) -> name('paabot.index');
-Route::put('/Paabot/{id}', [PaabotController::class,'update'])-> name('paabot.update');
+Route::get('admin/schedule', [ScheduleController::class,'index']) -> name('paabot.index');
+Route::put('/Scheddule/{id}', [ScheduleController::class,'update'])-> name('paabot.update');
 
-/* Route::get('admin/dalaw', [DalawController::class,'index']) -> name('dalaw.index');
-Route::put('/Dalaw/{id}', [DalawController::class,'update'])-> name('dalaw.update');
 
-Route::get('admin/tawag', [TawagController::class,'index']) -> name('tawag.index');
-Route::put('/Tawag/{id}', [TawagController::class, 'update'])-> name('tawag.update'); */
 
 /* ANNOUNCEMENT */
 Route::get('admin/announcement', [AnnouncementController::class,'index']) -> name('announcement.index');

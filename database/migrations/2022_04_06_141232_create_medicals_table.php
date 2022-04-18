@@ -16,7 +16,7 @@ class CreateMedicalsTable extends Migration
         Schema::create('medicals', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('birth_date');
+            $table->date('birth_date');
             $table->string('age');
             $table->string('address');
             $table->string('emergency_contact');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Medical;
+use App\Models\MedicalRecyclebin;
 use Illuminate\Http\Request;
 
 class MedicalController extends Controller
@@ -15,10 +16,10 @@ class MedicalController extends Controller
      */
     public function index()
     {
-        $records=Medical::all();
-        $count=Contact::count();
+        $records = Medical::all();
+        $count = Contact::count();
         $messages = Contact::paginate(5);
-        return view('BJMP.admin.records.medical.index',compact('records','count','messages'));
+        return view('BJMP.admin.records.medical.index', compact('records', 'count', 'messages'));
     }
 
     /**
@@ -28,8 +29,8 @@ class MedicalController extends Controller
      */
     public function create()
     {
-        $records=Medical::all();
-        return view('BJMP.admin.records.medical.pdf',compact('records'));
+        $records = Medical::all();
+        return view('BJMP.admin.records.medical.pdf', compact('records'));
     }
 
     /**
@@ -84,7 +85,7 @@ class MedicalController extends Controller
         $medical->age = $request->input('age');
         $medical->address = $request->input('address');
         $medical->emergency_contact = $request->input('emergency_contact');
-        $medical->relationship= $request->input('relationship');
+        $medical->relationship = $request->input('relationship');
         $medical->allergies = $request->input('allergies');
         $medical->current_medication = $request->input('current_medication');
         $medical->current_health_status = $request->input('current_health_status');
@@ -103,6 +104,21 @@ class MedicalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $medical = Medical::find($id);
+        $medicalrecyclebin = new MedicalRecyclebin();
+        $medicalrecyclebin->name = $medical->name;
+        $medicalrecyclebin->birth_date = $medical->birth_date;
+        $medicalrecyclebin->age = $medical->age;
+        $medicalrecyclebin->address = $medical->address;
+        $medicalrecyclebin->emergency_contact = $medical->emergency_contact;
+        $medicalrecyclebin->relationship = $medical->relationship;
+        $medicalrecyclebin->allergies = $medical->allergies;
+        $medicalrecyclebin->current_medication = $medical->current_medication;
+        $medicalrecyclebin->current_health_status = $medical->current_health_status;
+        $medicalrecyclebin->medical_history = $medical->medical_history;
+        $medicalrecyclebin->deleted_date=now();
+        $medicalrecyclebin->save();
+        $medical->delete();
+        return redirect()->route('medical.index');
     }
 }

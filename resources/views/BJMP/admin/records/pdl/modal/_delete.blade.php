@@ -14,23 +14,10 @@
 
 
 
-                <form action="{{ route('pdl.recyclebin.store') }}" method="POST">
+                <form action="{{ route('pdl.destroy',$record->id) }}" method="POST">
                     @csrf
-                    <input type="hidden" name="id" value="{{ $record->id }}">
-                    <input type="hidden" name="name" value="{{ $record->name }}">
-                    <input type="hidden" name="birthdate" value="{{ $record->birthdate }}">
-                    <input type="hidden" name="address" value="{{ $record->address }}">
-                    <input type="hidden" name="religion" value="{{ $record->religion }}">
-                    <input type="hidden" name="civil_status" value="{{ $record->civil_status }}">
-                    <input type="hidden" name="built" value="{{ $record->built }}">
-                    <input type="hidden" name="complexion" value="{{ $record->complexion }}">
-                    <input type="hidden" name="eye_color" value="{{ $record->eye_color }}">
-                    <input type="hidden" name="sex" value="{{ $record->sex }}">
-                    <input type="hidden" name="blood_type" value="{{ $record->blood_type }}">
-                    <input type="hidden" name="educational_attainment" value="{{ $record->educational_attainment }}">
-                    <input type="hidden" name="date_of_commitment" value="{{ $record->date_of_commitment }}">
-                    <input type="hidden" name="offense" value="{{ $record->offense }}">
-                    <input type="hidden" name="case_number" value="{{ $record->case_number }}">
+                    @method('DELETE')
+
 
 
                     <div class="modal-footer">

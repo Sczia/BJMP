@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pdl extends Model
 {
-    protected $table = 'pdl';
+    protected $table = 'pdls';
         public $timestamps = false;
         public $guarded = [];
 }

@@ -19,33 +19,33 @@
 
                     <tbody>
                         @foreach ($records as $record)
-
                             <tr>
                                 <td>{{ $record->name }}</td>
                                 <td>{{ $record->address }}</td>
                                 <td>{{ $record->emergency_contact }}</td>
                                 <td>{{ $record->medical_history }}</td>
-                               {{--  <td>{{ $record->birthdate }}</td>
-                                <td>{{ $record->age }}</td>
-                                <td>{{ $record->relationships }}</td>
-                                <td>{{ $record->allergies }}</td>
-                                <td>{{ $record->current_medication }}</td>
-                                <td>{{ $record->current_health_status }}</td>
-
- --}}
-
 
                                 <td class="text-center">
-                                    <a class="btn btn-sm btn-outline-primary" href="" data-toggle="modal" data-target="#view{{ $record->id }}"><i class="fas fa-eye"></i></a>
-                                    @include('BJMP.admin.recyclebin.medical.modal._show')
+                                    <a class="btn btn-sm btn-outline-primary" href="" data-toggle="modal"
+                                        data-target="#view{{ $record->id }}"><i class="fas fa-eye"></i></a>
+                                    @include(
+                                        'BJMP.admin.recyclebin.medical.modal._show'
+                                    )
                                 </td>
 
-                              <td class="d-flex justify-content-center align-items-center">
-                                    <a class="btn btn-sm  btn-outline-success mr-1" href="" data-toggle="modal" data-target="#download{{ $record->id }}"><i class="fas fa-download"></i></a>
-                                 @include('BJMP.admin.recyclebin.medical.modal._download')
-                                </td>
+                                <td class="d-flex justify-content-center align-items-center">
+                                    <a class="btn btn-sm  btn-outline-success mr-1" href="" data-toggle="modal"
+                                        data-target="#download{{ $record->id }}"><i class="fas fa-download"></i></a>
+                                    @include(
+                                        'BJMP.admin.recyclebin.medical.modal._download'
+                                    )
+
+                                    <a class="btn btn-sm  btn-outline-danger" href="" data-toggle="modal"
+                                        data-target="#delete{{ $record->id }}"> <i
+                                            class="fas fa-window-close"></i></a>
+                                    @include('BJMP.admin.recyclebin.medical.modal._delete')
+
                             </tr>
-
                         @endforeach
 
 
@@ -56,8 +56,6 @@
             </div>
         </div>
     </div>
-
-
 @endsection
 
 @section('page-level-javascript')
@@ -66,7 +64,4 @@
             $('#recyclebin medical').DataTable();
         });
     </script>
-
-
-
 @endsection

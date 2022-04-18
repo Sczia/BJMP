@@ -106,6 +106,9 @@ class PdlRecyclebinController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $pdl =PdlRecyclebin::find($id);
+        $pdl->delete();
+        return redirect()->route('pdl.recyclebin.index');
     }
 }

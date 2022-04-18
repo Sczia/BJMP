@@ -70,8 +70,11 @@ header {
     width: 40px;
 }
 
-.nav-left a h2 {
+body {
     font-family: 'Poppins', sans-serif !important;
+}
+
+.nav-left a h2 {
     font-size: 20px;
     margin-left: 10px;
     color: black;

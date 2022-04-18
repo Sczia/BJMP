@@ -12,7 +12,6 @@
                     <li><a href="{{ route('landing') }}">HOME </a></li>
                     <li><a href="{{ route('aboutus') }}">ABOUT US </a></li>
                     <li><a href="{{ route('guidlines') }}">APPOINTMENT </a></li>
-                    <li><a href="{{ route('gallery') }}">GALLERY </a></li>
                     <li><a href="{{ route('contactus') }}">CONTACT US </a></li>
                 </ul>
             </nav>

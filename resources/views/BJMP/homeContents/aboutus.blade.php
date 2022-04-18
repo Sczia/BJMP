@@ -57,7 +57,7 @@
 
     </section>
 
-
+    <hr class="featurette-divider">
 
     <div class="wrapper ">
 
@@ -119,11 +119,12 @@
 
         <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider">
+      <hr class="featurette-divider">
 
         <div class="row featurette">
-            <div class="col-md-7 text-justify">
-                <h2 class="featurette-heading">Municipal Jail of Los Banos<span class="text-muted"></span></h2>
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Municipal Jail of Los Banos<span class="text-muted"></span>
+                </h2>
                 <p class="lead">Logo Meaning
 
                     <ul>
@@ -141,9 +142,10 @@
                         <li>Heacy and Thick Bars - Depicts custody, tightened security and control of PDL.</li>
                         <li>Green Color - stands for "greener pastures" a new place that offers new opportunities.</li>
                     </ul>
+                    </ul>
                 </p>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 order-md-1">
                 <img src="./img/MJLB_Logo-removebg-preview.png" width="400" height="400" xmlns="http://www.w3.org/2000/svg" role="img"
                     aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
@@ -185,10 +187,11 @@
             </div>
             <div class="col-md-5 order-md-1">
                 <img src="./img/bjmp-main-removebg-preview.png" width="400" height="400" xmlns="http://www.w3.org/2000/svg"
-                    role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa"
-                    dy=".3em"></text></svg>
+                role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa"
+                dy=".3em"></text></svg>
+
 
             </div>
         </div>

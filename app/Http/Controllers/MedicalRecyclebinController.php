@@ -102,6 +102,9 @@ class MedicalRecyclebinController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $medical =MedicalRecyclebin::find($id);
+        $medical->delete();
+        return redirect()->route('medical.recyclebin.index');
     }
 }

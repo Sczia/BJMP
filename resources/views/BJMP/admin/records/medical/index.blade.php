@@ -2,7 +2,7 @@
 @section('contents')
 <div class="row align-items-center mb-3">
     <div class="col">
-        <h1 class="h3 mb-4 text-gray-800">PDL Record</h1>
+        <h1 class="h3 mb-4 text-gray-800">Medical Record</h1>
     </div>
     <div class="col">
         <div class="d-flex justify-content-end">

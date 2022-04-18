@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Health;
-use App\Appointment;
+use App\Models\Appointment ;
 use Livewire\Component;
 
 class Form extends Component
@@ -180,8 +180,6 @@ class Form extends Component
             'prisoner_relationship' => $this->prisoner_relationship,
             'phone_number' => $this->phone_number,
             'health_poll' => $this->health_poll,
-        ];
-        $health_poll = [
             'name' => $this->first_name.' '.$this->middle_name.' '.$this->last_name,
             'temp' => $this->q1,
             'resp' => $this->q2,
@@ -200,9 +198,10 @@ class Form extends Component
             'place' => $this->q9,
             'eq_place' => $this->q9 === "No" ? null : $this->eq9,
         ];
+
         try {
             Appointment::create($appointment);
-            Health::create($health_poll);
+
             /* $appointment = new Appointment();
             $appointment->first_name = $this->first_name;
             $appointment->middle_name = $this->middle_name;
@@ -240,7 +239,7 @@ class Form extends Component
             if ($th == null) {
                 # code...
             }
-            dd($appointment,$health_poll,$th);
+         
         }
 
     }

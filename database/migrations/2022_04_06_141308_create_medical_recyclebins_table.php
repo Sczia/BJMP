@@ -16,7 +16,7 @@ class CreateMedicalRecyclebinsTable extends Migration
         Schema::create('medical_recyclebins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('birth_date');
+            $table->date('birth_date');
             $table->string('age');
             $table->string('address');
             $table->string('emergency_contact');

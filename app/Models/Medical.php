@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medical extends Model
 {
-    protected $table = 'medical';
+    protected $table = 'medicals';
         public $timestamps = false;
         public $guarded = [];
 }

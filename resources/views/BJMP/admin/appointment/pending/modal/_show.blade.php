@@ -1,6 +1,6 @@
 
 
-<div class="modal fade" id="view{{ $appointment->id }}" tabindex="-1" role="dialog" aria-labelledby="examplModallongTitle" aria-hidden="true">
+<div class="modal fade" id="show{{ $appointment->id }}" tabindex="-1" role="dialog" aria-labelledby="examplModallongTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role document="document">
         <div class="modal-content">
             <div class="modal-header bg-primary">

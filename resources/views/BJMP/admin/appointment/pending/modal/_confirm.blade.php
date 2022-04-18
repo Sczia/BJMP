@@ -10,7 +10,9 @@
             </div>
 
             <div class="modal-body">
-                <h1>{{ $appointment->first_name}}  {{ $appointment->last_name}} {{ $appointment->middle_name}} </h1>
+                <h5>Name: {{ $appointment->first_name}}  {{ $appointment->last_name}} {{ $appointment->middle_name}} </h5>
+                <h5>Prisoner name: {{ $appointment->prisoner_name}} </h5>
+                <h5>Relationship to the Prisoner: {{ $appointment->prisoner_relationship}} </h5>
 
                 <form action="{{ route('confirm.store') }}" method="post">
                     @csrf

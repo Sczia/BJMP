@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MedicalRecyclebin extends Model
 {
-    protected $table = 'medical_recyclebin';
+    protected $table = 'medical_recyclebins';
         public $timestamps = false;
         public $guarded = [];
 }

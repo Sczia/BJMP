@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PdlRecyclebin extends Model
 {
-    protected $table = 'pdl_recyclebin';
+    protected $table = 'pdl_recyclebins';
     public $timestamps = false;
     public $guarded = [];
 }
