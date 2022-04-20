@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail \WelcomeMail;
+use App\Mail\WelcomeMail;
 use Illuminate\Http\Request;
 use App\Mail\welcome;
 use App\Models\Appointment;
