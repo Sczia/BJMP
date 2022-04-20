@@ -249,7 +249,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12 col-lg-8 mb-3 ">
+                            <div class="col-md-12 col-lg-12 mb-3 ">
                                 <label for="health_poll" class="text-dark h5 fw-normal form-title">Health Poll <span
                                         class="text-danger">*</span></label>
                                 <div class="">

@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             appointmentSeeder::class,
             attendanceSeeder::class,
             confirmSeeder::class,
+            contactSeeder::class,
             medicalSeeder::class,
             medicalrecyclebinSeeder::class,
             pdlSeeder::class,

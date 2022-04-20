@@ -43,8 +43,12 @@
 
                                 <td class="text-center">
                                     <a class="btn btn-sm btn-outline-primary" href="" data-toggle="modal"
-                                        data-target="#view{{ $appointment->id }}"> <i class="fas fa-eye"></i></a>
+                                        data-target="#show{{ $appointment->id }}"> <i class="fas fa-eye"></i></a>
                                     @include('BJMP.admin.appointment.confirm.modal._show')
+
+                                    <a class="btn btn-sm btn-outline-success" href="" data-toggle="modal"
+                                    data-target="#view{{ $appointment->id }}"><i class="fa-solid fa-hospital-user"></i></a>
+                                @include('BJMP.admin.appointment.confirm.modal._view')
                                 </td>
 
                                {{--  <td class="d-flex justify-content-center align-items-center">

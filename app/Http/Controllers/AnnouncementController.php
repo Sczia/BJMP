@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Announcement;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Alert;
+
+
 
 class AnnouncementController extends Controller
 {
@@ -15,10 +18,10 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        $announcement=Announcement::all();
-        $count=Contact::count();
+        $announcement = Announcement::all();
+        $count = Contact::count();
         $messages = Contact::paginate(5);
-        return view('BJMP.admin.announcement.index',compact('announcement','count','messages'));
+        return view('BJMP.admin.announcement.index', compact('announcement', 'count', 'messages'));
     }
 
     /**
@@ -73,10 +76,17 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $announcement = Announcement::findOrFail($id);
+        $announcement = Announcement::FindorFail($id);
+        $announcement->update(
+            $request->all()
+        );
 
-        $announcement->announce  = $request->input('announce');
-        $announcement->update();
+        if($announcement->wasChanged()) {
+            toast()->success('Success', 'You saved changes')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+
+            return redirect()->back();
+        }
+        toast()->info('Info', 'There is no changes')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
 
         return redirect()->route('announcement.index');
     }

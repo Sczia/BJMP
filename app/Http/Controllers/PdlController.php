@@ -41,9 +41,22 @@ class PdlController extends Controller
      */
     public function store(Request $request)
     {
-        Pdl::create(
-            $request->all()
-        );
+
+
+
+        try {
+           Pdl::create(
+
+                $request->all()
+
+            );
+            toast()->success('Success', 'You added a new record')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            toast()->warning('Info', 'You did not input any record ')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            return redirect()->back();
+         }
+
         return redirect()->back();
     }
 
@@ -114,21 +127,21 @@ class PdlController extends Controller
     {
         $pdl = Pdl::find($id);
         $pdlrecyclebin = new PdlRecyclebin();
-dd($pdl);
-        $pdl->name = $pdl->name;
-        $pdl->birthdate = $pdl->birthdate;
-        $pdl->address = $pdl->address;
-        $pdl->religion = $pdl->religion;
-        $pdl->civil_status = $pdl->civil_status;
-        $pdl->built = $pdl->built;
-        $pdl->complexion = $pdl->complexion;
-        $pdl->eye_color = $pdl->eye_color;
-        $pdl->sex = $pdl->sex;
-        $pdl->blood_type = $pdl->blood_type;
-        $pdl->educational_attainment = $pdl->educational_attainment;
-        $pdl->date_of_commitment = $pdl->date_of_commitment;
-        $pdl->offense = $pdl->offense;
-        $pdl->case_number = $pdl->case_number;
+
+         $pdlrecyclebin->name = $pdl->name;
+         $pdlrecyclebin->birth_date = $pdl->birth_date;
+         $pdlrecyclebin->address = $pdl->address;
+         $pdlrecyclebin->religion = $pdl->religion;
+         $pdlrecyclebin->civil_status = $pdl->civil_status;
+         $pdlrecyclebin->built = $pdl->built;
+         $pdlrecyclebin->complexion = $pdl->complexion;
+         $pdlrecyclebin->eye_color = $pdl->eye_color;
+         $pdlrecyclebin->sex = $pdl->sex;
+         $pdlrecyclebin->blood_type = $pdl->blood_type;
+         $pdlrecyclebin->educational_attainment = $pdl->educational_attainment;
+         $pdlrecyclebin->date_of_commitment = $pdl->date_of_commitment;
+         $pdlrecyclebin->offense = $pdl->offense;
+         $pdlrecyclebin->case_number = $pdl->case_number;
         $pdlrecyclebin->deleted_date = now();
         $pdlrecyclebin->save();
         $pdl->delete();

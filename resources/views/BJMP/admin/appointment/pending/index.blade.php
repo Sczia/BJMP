@@ -44,11 +44,11 @@
                                 <td class="text-center  ">
                                     <a class="btn btn-sm btn-outline-primary mb-1" href="" data-toggle="modal"
                                     data-target="#show{{ $appointment->id }}"><i class="fas fa-eye"></i></a>
-                                @include( 'BJMP.admin.appointment.pending.modal._show')
+                                @include('BJMP.admin.appointment.pending.modal._show')
 
                                 <a class="btn btn-sm btn-outline-success" href="" data-toggle="modal"
                                 data-target="#view{{ $appointment->id }}"><i class="fa-solid fa-hospital-user"></i></a>
-                            @include( 'BJMP.admin.appointment.pending.modal._view')
+                            @include('BJMP.admin.appointment.pending.modal._view')
                                 </td>
 
 
@@ -56,16 +56,12 @@
                                     <a class="btn btn-sm  btn-outline-success mb-1" href="" data-toggle="modal"
                                         data-target="#confirm{{ $appointment->id }}"><i
                                             class="fas fa-check-square"></i></a>
-                                    @include(
-                                        'BJMP.admin.appointment.pending.modal._confirm'
-                                    )
+                                    @include('BJMP.admin.appointment.pending.modal._confirm')
 
                                     <a class="btn btn-sm  btn-outline-danger" href="" data-toggle="modal"
                                         data-target="#cancel{{ $appointment->id }}"> <i
                                             class="fas fa-window-close"></i></a>
-                                    @include(
-                                        'BJMP.admin.appointment.pending.modal._cancel'
-                                    )
+                                    @include('BJMP.admin.appointment.pending.modal._cancel')
                                 </td>
                             </tr>
                         @endforeach

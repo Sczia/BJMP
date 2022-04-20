@@ -43,7 +43,7 @@ class PdlRecyclebinController extends Controller
         /* dd($request->all()); */
         $record = new PdlRecyclebin;
         $record->name = $request->input('name');
-        $record->birthdate = $request->input('birthdate');
+        $record->birth_date = $request->input('birth_date');
         $record->address = $request->input('address');
         $record->religion = $request->input('religion');
         $record->civil_status= $request->input('civil_status');

@@ -41,8 +41,7 @@
                                     )
 
                                     <a class="btn btn-sm  btn-outline-danger" href="" data-toggle="modal"
-                                        data-target="#delete{{ $record->id }}"> <i
-                                            class="fas fa-window-close"></i></a>
+                                        data-target="#delete{{ $record->id }}"> <i class="fas fa-trash-alt"></i></a>
                                     @include('BJMP.admin.recyclebin.medical.modal._delete')
 
                             </tr>

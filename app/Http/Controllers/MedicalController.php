@@ -41,9 +41,19 @@ class MedicalController extends Controller
      */
     public function store(Request $request)
     {
-        Medical::create(
-            $request->all()
-        );
+        try {
+            Medical::create(
+
+                $request->all()
+
+            );
+            toast()->success('Success', 'You added a new record')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            return redirect()->back();
+        } catch (\Throwable $th) {
+            toast()->warning('Info', 'You did not input any record ')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            return redirect()->back();
+         }
+
         return redirect()->back();
     }
 
@@ -80,18 +90,19 @@ class MedicalController extends Controller
     {
         $medical = Medical::findOrFail($id);
 
-        $medical->name = $request->input('name');
-        $medical->birthdate = $request->input('birthdate');
-        $medical->age = $request->input('age');
-        $medical->address = $request->input('address');
-        $medical->emergency_contact = $request->input('emergency_contact');
-        $medical->relationship = $request->input('relationship');
-        $medical->allergies = $request->input('allergies');
-        $medical->current_medication = $request->input('current_medication');
-        $medical->current_health_status = $request->input('current_health_status');
-        $medical->medical_history = $request->input('medical_history');
 
-        $medical->update();
+
+
+        $medical->update(
+            $request->all()
+        );
+
+        if ($medical->wasChanged()) {
+            toast()->success('Success', 'You saved changes')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+
+            return redirect()->back();
+        }
+        toast()->info('Info', 'There is no changes')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
 
         return redirect()->route('medical.index');
     }
@@ -116,9 +127,17 @@ class MedicalController extends Controller
         $medicalrecyclebin->current_medication = $medical->current_medication;
         $medicalrecyclebin->current_health_status = $medical->current_health_status;
         $medicalrecyclebin->medical_history = $medical->medical_history;
-        $medicalrecyclebin->deleted_date=now();
-        $medicalrecyclebin->save();
-        $medical->delete();
+        $medicalrecyclebin->deleted_date = now();
+        try {
+            $medicalrecyclebin->save();
+            $medical->delete();
+            toast()->success('Success', 'You already deleted the record')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            return redirect()->route('medical.index');
+        } catch (\Throwable $th) {
+            toast()->warning('Warning', 'You did not deleted the record ')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+             return redirect()->route('medical.index');
+        }
+
         return redirect()->route('medical.index');
     }
 }

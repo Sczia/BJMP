@@ -1,6 +1,23 @@
 @extends('BJMP.admin.layouts.mainlayout')
 @section('contents')
-    <h1 class="h3 mb-4 text-gray-800">Visitor's Attendance</h1>
+
+
+    <div class="row align-items-center mb-3">
+        <div class="col">
+            <h1 class="h3 mb-4 text-gray-800">Visitor's Attendance</h1>
+        </div>
+        <div class="col">
+            <div class="d-flex justify-content-end">
+
+                <a href="{{ route('attendance.create') }}" class="btn btn-success mr-3">
+                    <span class="d-flex align-items-center"><i class="fa-solid fa-file-pdf"></i>&#160; print</span>
+                </a>
+
+
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">

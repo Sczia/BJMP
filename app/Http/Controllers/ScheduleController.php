@@ -81,7 +81,18 @@ class ScheduleController extends Controller
         $schedules->dorm = $request->input('dorm');
 
 
-        $schedules->update();
+        $schedules = Schedule::FindorFail($id);
+        $schedules->update(
+            $request->all()
+        );
+
+        if($schedules->wasChanged()) {
+            toast()->success('Success', 'You saved changes')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+
+            return redirect()->back();
+        }
+        toast()->info('Info', 'There is no changes')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+
 
         return redirect()->route('paabot.index');
     }

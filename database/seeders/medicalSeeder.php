@@ -17,7 +17,7 @@ class medicalSeeder extends Seeder
         $data = [
 
             'name' => 'Krysia Hernandez',
-            'birth_date' => 'Hernandez',
+            'birth_date' => '22-04-18',
             'age' => '21',
             'address' => '158 silangan, St. Brgy. Dayap, Calaan, Laguna',
             'emergency_contact' => '09192054322',

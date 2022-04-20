@@ -180,7 +180,7 @@ class Form extends Component
             'prisoner_relationship' => $this->prisoner_relationship,
             'phone_number' => $this->phone_number,
             'health_poll' => $this->health_poll,
-            'name' => $this->first_name.' '.$this->middle_name.' '.$this->last_name,
+         
             'temp' => $this->q1,
             'resp' => $this->q2,
             'eq_resp' => $this->q2 === "None" ? null : $this->eq2,
@@ -236,10 +236,8 @@ class Form extends Component
             $health_poll->save(); */
             $this->currentStep = 3;
         } catch (\Throwable $th) {
-            if ($th == null) {
-                # code...
-            }
-         
+         dd($th);
+
         }
 
     }

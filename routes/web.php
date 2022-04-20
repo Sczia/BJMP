@@ -96,8 +96,9 @@ Route::post('admin/recyclebin/pdl', [PdlRecyclebinController::class,'store']) ->
 Route::delete('/admin/recyclebin/pdl/{id}', [PdlRecyclebinController::class,'destroy'])-> name('pdl.recyclebin.destroy');
 
 /* ATTENDAMCE */
-Route::get('admin/attendance', [AttendanceController::class,'index']) -> name('attendance.index');
+Route::get('admin/Attendance', [AttendanceController::class,'index']) -> name('attendance.index');
 Route::post('admin/Attendance', [AttendanceController::class,'store']) -> name('attendance.store');
+Route::get('admin/Attendance/download', [AttendanceController::class,'create'])-> name('attendance.create');
 
 /* CONTACT US */
 Route::get('admin/contact', [ContactController::class,'index']) -> name('contact.index');

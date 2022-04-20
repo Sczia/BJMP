@@ -29,7 +29,8 @@ class AttendanceController extends Controller
      */
     public function create()
     {
-        //
+        $attendance= Attendance::all();
+        return view('BJMP.admin.appointment.attendance.pdf', compact('attendance')); 
     }
 
     /**

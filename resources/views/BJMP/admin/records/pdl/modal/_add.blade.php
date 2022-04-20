@@ -26,7 +26,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="birthdate" class="text-dark text-black font-weight-bold">BIRTHDATE</label>
-                                <input type="date" class="form-control" name="birthdate" id="birthdate" placeholder="Birthdate" value="">
+                                <input type="date" class="form-control" name="birth_date" id="birth_date" placeholder="Birth_date" value="">
                             </div>
 
                             <div class="form-group">

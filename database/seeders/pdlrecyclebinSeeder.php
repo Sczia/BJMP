@@ -17,7 +17,7 @@ class pdlrecyclebinSeeder extends Seeder
         $data = [
 
             'name' => 'Krysia Hernandez',
-            'birth_date' => 'Hernandez',
+            'birth_date' => '22-04-18',
             'address' => '158 silangan, St. Brgy. Dayap, Calaan, Laguna',
             'religion' => 'Roman Catholic',
             'civil_status' => 'married',
