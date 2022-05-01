@@ -6,6 +6,7 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\ConfirmController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\HealthController;
 use App\Http\Controllers\homeContents;
 use App\Http\Controllers\MailController;
@@ -16,6 +17,7 @@ use App\Http\Controllers\PdlController;
 use App\Http\Controllers\PdlRecyclebinController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\SMS;
 use App\Mail\Email;
 use App\Mail\WelcomeMail;
 use App\Models\Appointment;
@@ -43,7 +45,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [homeContents::class,'opener']) -> name('opener');
 Route::get('/home', [homeContents::class,'landing']) -> name('landing');
 Route::get('/aboutus', [homeContents::class,'aboutus']) -> name('aboutus');
-/* Route::get('/gallery', [homeContents::class,'gallery']) -> name('gallery'); */
+Route::get('/calendar', [homeContents::class,'calendar']) -> name('calendar');
 Route::get('/appointment', [homeContents::class,'appointment']) -> name('appointment');
 
 //appointment//
@@ -104,6 +106,8 @@ Route::get('admin/Attendance/download', [AttendanceController::class,'create'])-
 Route::get('admin/contact', [ContactController::class,'index']) -> name('contact.index');
 Route::post('admin/Contact', [ContactController::class,'store']) -> name('contact.store');
 Route::delete('admin/contact', [ContactController::class,'destroy']) -> name('contact.destroy');
+Route::post('admin/reply', [MailController::class,'reply']) -> name('contact.reply');
+
 
 
 Route::get('admin/health', [HealthController::class,'index']) -> name('health.index');
@@ -122,8 +126,10 @@ Route::get('admin/announcement', [AnnouncementController::class,'index']) -> nam
 Route::put('/Announcement/{id}', [AnnouncementController::class, 'update'])-> name('announcement.update');
 
 Route::get('/send-mail',[MailController::class,'sendmail']);
+Route::get('/sendSmsNotificaition',[SMS::class,'sendSmsNotificaition']);
 
 
-
-
-
+/* EVENTS or CALENDAR*/
+Route::get('admin/events', [EventsController::class,'index']) -> name('events.index');
+Route::post('admin/events', [EventsController::class,'store']) -> name('events.store');
+Route::put('/Events/{id}', [EventsController::class, 'update'])-> name('events.update');

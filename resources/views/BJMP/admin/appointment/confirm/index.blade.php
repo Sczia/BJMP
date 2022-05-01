@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class=" table-bordered" id="confirm">
+                <table class=" table-bordered table-hover" id="confirm">
                     <thead class="table-info text-black">
                         <tr>
                             <th>Full name</th>

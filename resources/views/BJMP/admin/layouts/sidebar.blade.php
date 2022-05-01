@@ -42,8 +42,9 @@
         <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 {{-- <h6 class="collapse-header">Custom Components:</h6> --}}
-          <a class="collapse-item" href="{{ route('contact.index') }}">Messages</a>
-          <a class="collapse-item" href="{{ route('announcement.index') }}">Announcement</a>
+                <a class="collapse-item" href="{{ route('announcement.index') }}">Announcement</a>
+                <a class="collapse-item" href="{{ route('events.index') }}">Calendar</a>
+                <a class="collapse-item" href="{{ route('contact.index') }}">Messages</a>
           <a class="collapse-item" href="{{ route('paabot.index') }}">Schedule</a>
             </div>
         </div>

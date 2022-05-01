@@ -30,7 +30,7 @@ class confirmSeeder extends Seeder
             'health_poll' => 'Fully Vaccinated',
 
             'temp'=> 'no',
-            'resp'=> 'no',
+            'resp'=> 'none',
             'travel'=> 'no',
             'history'=> 'no',
             'hospital'=> 'no',

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use App\Models\Appointment;
+use App\Models\events;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 
@@ -32,8 +33,9 @@ class homeContents extends Controller
 
    return view ('BJMP.homecontents.guidelines', compact('count'));
  }
- public function gallery (){
-   return view ('BJMP.homecontents.gallery');
+ public function calendar (){
+     $events=events::all();
+   return view ('BJMP.homecontents.calendar' , compact('events'));
  }
  public function contactus (){
    return view ('BJMP.homecontents.contactus');

@@ -28,6 +28,7 @@ class WelcomeMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Municipal Jail of Los Banos Laguna')->view('emails.welcome');
+        return $this->from(env('MAIL_USERNAME'))->subject('Municipal Jail of Los Banos Laguna')->markdown('emails.welcome',['details'=>$this->details]);
+  
     }
 }

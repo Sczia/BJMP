@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table table-bordered" id="pending">
+                <table class="table table-bordered table-hover" id="pending">
                     <thead class="table-warning text-black">
                         <tr>
                             <th>Name</th>
@@ -24,18 +24,13 @@
                                 <td>{{ $contact->email }}</td>
 
 
-
-
-
-
-
-
-
-                                <td class="text-center">
+                               <td class="text-center">
                                     <a class="btn btn-sm btn-outline-primary" href="" data-toggle="modal"
                                         data-target="#view{{ $contact->id }}"><i class="fas fa-eye"></i></a>
                                     @include('BJMP.admin.contact.modal._show')
                                 </td>
+
+
 
                                 <td class="d-flex justify-content-center align-items-center">
                                     <a class="btn btn-sm  btn-outline-danger mr-1" href="" data-toggle="modal"
@@ -48,8 +43,6 @@
                             </tr>
 
                         @endforeach
-
-
 
                     </tbody>
 

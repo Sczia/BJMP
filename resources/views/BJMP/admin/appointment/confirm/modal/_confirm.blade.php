@@ -10,7 +10,7 @@
             </div>
 
             <div class="modal-body">
-                <h1>{{ $appointment->first_name}}  {{ $appointment->last_name}} {{ $appointment->middle_name}} </h1>
+                <h1> {{ $appointment->first_name}}  {{ $appointment->last_name}} {{ $appointment->middle_name}} </h1>
                 <form action="{{ route('confirmed.store') }}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{ $appointment->id }}">

@@ -11,6 +11,7 @@
                 <ul class="nav-link">
                     <li><a href="{{ route('landing') }}">HOME </a></li>
                     <li><a href="{{ route('aboutus') }}">ABOUT US </a></li>
+                    <li><a href="{{ route('calendar') }}">CALENDAR </a></li>
                     <li><a href="{{ route('guidlines') }}">APPOINTMENT </a></li>
                     <li><a href="{{ route('contactus') }}">CONTACT US </a></li>
                 </ul>

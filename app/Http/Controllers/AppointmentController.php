@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\WelcomeMail;
 use App\Models\Appointment;
 use App\Models\Contact;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
+use PhpParser\Node\Stmt\TryCatch;
 
 class AppointmentController extends Controller
 {
@@ -92,8 +97,34 @@ class AppointmentController extends Controller
 
             $id=$request->input('id');
             $appointment =Appointment::findOrFail($id);
+            $details = [
+                'title' => 'Mail from Municipal Jail of Los Banos',
+                'body' => 'Sorry your appointment does not approved, Kindly wait for the vaccanvy of the schedule.  Thank you and Stay safe!'
+
+            ];
+
+            $data = [
+                'api_key' =>'24uYdd3CINZrkd4yyWCY8qh0MuK', // API KEY
+                'api_secret' => 'GwtTzi1W9hJSUG6VZrRZVRKdif3cjHJLrvNIej13', // API SECRET
+                'to' =>   "63".Str::substr($appointment->phone_number,1,10), // replace with mobile number ng sesendan
+                'text' => "Congratulations your appointment has been approved. Thank you!", // Text message mo
+                'from' => "Mail from Municipal Jail of Los Banos" // Y0u need paid account para palitan ito.
+                 ];
+try {
+    $response= Http::asForm()->post('https://api.movider.co/v1/sms',$data);
+
+
+
+    Mail::to($appointment->email)->send(new WelcomeMail($details));
+} catch (\Throwable $th) {
+   dd($th);
+}
+
+
+
             $appointment->delete();
             return redirect()->route('pending.index');
+
         }
 
 

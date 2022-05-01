@@ -27,52 +27,63 @@
                     <tbody>
 
                       <tr>
-                        <td>First name:</td>
-                        <td>{{ $appointment->first_name }}</td>
+                        <td class="text-left">First name:</td>
+                        <td class="text-left">{{ $appointment->first_name }}</td>
                       </tr>
+
                       <tr>
-                        <td>Last name:</td>
-                        <td>{{ $appointment->last_name }}</td>
+                        <td class="text-left">Last name:</td>
+                        <td class="text-left">{{ $appointment->last_name }}</td>
                       </tr>
+
                       <tr>
-                        <td>Middle name:</td>
-                        <td>{{ $appointment->middle_name }}</td>
+                        <td class="text-left">Middle name:</td>
+                        <td class="text-left">{{ $appointment->middle_name }}</td>
                       </tr>
+
                       <tr>
-                        <td>Age:</td>
-                        <td>{{ $appointment->age }}</td>
+                        <td class="text-left">Age:</td>
+                        <td class="text-left">{{ $appointment->age }}</td>
                       </tr>
+
                       <tr>
-                        <td>Gender:</td>
-                        <td>{{ $appointment->gender}}</td>
+                        <td class="text-left">Gender:</td>
+                        <td class="text-left">{{ $appointment->gender}}</td>
                       </tr>
+
                       <tr>
-                        <td>Email:</td>
-                        <td>{{ $appointment->email }}</td>
+                        <td class="text-left">Email:</td>
+                        <td class="text-left">{{ $appointment->email }}</td>
                       </tr>
+
                       <tr>
-                        <td>Address:</td>
-                        <td>{{ $appointment->address }}</td>
+                        <td class="text-left">Address:</td>
+                        <td class="text-left">{{ $appointment->address }}</td>
                       </tr>
+
                       <tr>
-                        <td>Date:</td>
-                        <td>{{ $appointment->date }}</td>
+                        <td class="text-left">Date:</td>
+                        <td class="text-left"{{ $appointment->date }}</td>
                       </tr>
+
                       <tr>
-                        <td>Name of the Prisoner:</td>
-                        <td>{{ $appointment->prisoner_name }}</td>
+                        <td class="text-left">Name of the Prisoner:</td>
+                        <td class="text-left">{{ $appointment->prisoner_name }}</td>
                       </tr>
+
                       <tr>
-                        <td>Relationship to the Prisoner:</td>
-                        <td>{{ $appointment->prisoner_relationship }}</td>
+                        <td class="text-left">Relationship to the Prisoner:</td>
+                        <td class="text-left">{{ $appointment->prisoner_relationship }}</td>
                       </tr>
+
                       <tr>
-                        <td>Phone number:</td>
-                        <td>{{ $appointment->phone_number }}</td>
+                        <td class="text-left">Phone number:</td>
+                        <td class="text-left">{{ $appointment->phone_number }}</td>
                       </tr>
+
                       <tr>
-                        <td>Health Poll:</td>
-                        <td>{{ $appointment->health_poll }}</td>
+                        <td class="text-left">Health Poll:</td>
+                        <td class="text-left">{{ $appointment->health_poll }}</td>
                       </tr>
 
                     </tbody>

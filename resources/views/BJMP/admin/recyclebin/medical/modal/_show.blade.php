@@ -22,48 +22,55 @@
 
                     <tbody>
 
-                      <tr>
-                        <td>Name:</td>
-                        <td>{{ $record->name }}</td>
-                      </tr>
-                      <tr>
-                        <td>Birthdate:</td>
-                        <td>{{ $record->birthdate }}</td>
-                      </tr>
-                      <tr>
-                        <td>Age:</td>
-                        <td>{{ $record->age }}</td>
-                      </tr>
-                      <tr>
-                        <td>Address:</td>
-                        <td>{{ $record->address }}</td>
-                      </tr>
-                      <tr>
-                        <td>Emergency contact:</td>
-                        <td>{{ $record->emergency_contact }}</td>
-                      </tr>
-                      <tr>
-                        <td>Relationship:</td>
-                        <td>{{ $record->relationship }}</td>
-                      </tr>
+                        <tr>
+                            <td class="text-left">Name:</td>
+                            <td class="text-left">{{ $record->name }}</td>
+                          </tr>
 
-                      <tr>
-                        <td>Allergies:</td>
-                        <td>{{ $record->allergies}}</td>
-                      </tr>
-                      <tr>
-                        <td>Current Medication:</td>
-                        <td>{{ $record->current_medication }}</td>
-                      </tr>
+                          <tr>
+                            <td class="text-left">Birthdate:</td>
+                            <td class="text-left">{{ $record->birthdate }}</td>
+                          </tr>
 
-                      <tr>
-                        <td>Current Health Status:</td>
-                        <td>{{ $record->current_health_htatus }}</td>
-                      </tr>
-                      <tr>
-                        <td>Medical History:</td>
-                        <td>{{ $record->meddical_history}}</td>
-                      </tr>
+                          <tr>
+                            <td class="text-left">Age:</td>
+                            <td class="text-left">{{ $record->age }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Address:</td>
+                            <td class="text-left">{{ $record->address }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Emergency contact:</td>
+                            <td class="text-left">{{ $record->emergency_contact }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Relationship:</td>
+                            <td class="text-left">{{ $record->relationship }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Allergies:</td>
+                            <td class="text-left">{{ $record->allergies}}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Current Medication:</td>
+                            <td class="text-left">{{ $record->current_medication }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Current Health Status:</td>
+                            <td class="text-left">{{ $record->current_health_htatus }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Medical History:</td>
+                            <td class="text-left"{{ $record->meddical_history}}</td>
+                          </tr>
 
                     </tbody>
                   </table>

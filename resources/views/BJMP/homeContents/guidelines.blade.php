@@ -5,7 +5,7 @@
 
 @endsection
 @section('contents')
-@if ($count>=30)
+@if ($count>=10)
 
 <div class="image">
 

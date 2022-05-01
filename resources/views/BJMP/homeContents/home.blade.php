@@ -21,10 +21,5 @@
         <h1>HOME</h1>
     </div>
 
-    <div class="calendar-container">
-        <div class="calendar-container-left">
-
-        </div>
-
-        <div class="calendar-container-right"> </div>
+  
 </section>

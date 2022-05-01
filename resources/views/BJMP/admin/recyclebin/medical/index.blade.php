@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table table-bordered" id="recyclebin medical">
+                <table class="table table-bordered table-hover" id="recyclebin medical">
                     <thead class="table-success text-black">
                         <tr>
                             <th>Full name</th>

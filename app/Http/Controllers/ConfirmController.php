@@ -8,6 +8,8 @@ use App\Mail\welcome;
 use App\Models\Appointment;
 use App\Models\Confirm;
 use App\Models\Contact;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 
 class ConfirmController extends Controller
@@ -86,9 +88,20 @@ class ConfirmController extends Controller
 
             ];
 
+            $data = [
+                'api_key' =>'24uYdd3CINZrkd4yyWCY8qh0MuK', // API KEY
+                'api_secret' => 'GwtTzi1W9hJSUG6VZrRZVRKdif3cjHJLrvNIej13', // API SECRET
+                'to' =>   "63".Str::substr($confirm->phone_number,1,10), // replace with mobile number ng sesendan
+                'text' => "Congratulations your appointment has been approved. Thank you!", // Text message mo
+                'from' => "Mail from Municipal Jail of Los Banos" // Y0u need paid account para palitan ito.
+                 ];
+
+
+              $response= Http::asForm()->post('https://api.movider.co/v1/sms',$data);
+
+
 
             Mail::to($request->input('email'))->send(new WelcomeMail($details));
-
 
             $pending = Appointment::findOrFail($id);
             $pending->delete();

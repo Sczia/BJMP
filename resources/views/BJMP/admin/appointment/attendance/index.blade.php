@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table table-bordered" id="attendance">
+                <table class="table table-bordered table-hover" id="attendance">
                     <thead   <thead class="table-danger text-black">
                         <tr>
                             <th>Full name</th>

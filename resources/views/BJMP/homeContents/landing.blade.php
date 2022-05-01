@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="{{ asset('container/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slider.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/calendar.css') }}">
 @endsection
 
 @section('contents')
@@ -171,52 +170,17 @@
     <!-- End Service Section -->
 
     <!--------------------------------------------------CALENDAR---------------------------------------------------- -->
-    <section  id="services">
+ {{--    <section  id="services">
         <div class="services container">
             <div class="service-top " >
                 <h1 class="section-title">CAL<span>EN</span>DAR</h1>
-                <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum deleniti maiores pariatur assumenda quas magni et, doloribus quod voluptate quasi molestiae magnam officiis dolorum, dolor provident atque molestias voluptatum explicabo!</p> -->
             </div>
 
-            <div class="contain">
-                <div class="calendar">
-                    <div class="month">
-                        <i class="fas fa-angle-left prev"></i>
-                        <div class="date">
-                            <h1></h1>
-                            <p></p>
-                        </div>
-                        <i class="fas fa-angle-right next"></i>
-                    </div>
-                    <div class="weekdays">
-                        <div>Sun</div>
-                        <div>Mon</div>
-                        <div>Tue</div>
-                        <div>Wed</div>
-                        <div>Thu</div>
-                        <div>Fri</div>
-                        <div>Sat</div>
-                    </div>
-                    <div class="days"></div>
-                </div>
-                <div class="events">
-                    <div class="event-title">
-                        <i class="fas fa-calendar-week"></i>
-                        <h2>Event for this month</h2>
-                    </div>
+<section>
+    <div id='calendar'></div>
 
-                    <div class="event">
-                        <a href="">
-
-                            <h3>1 - New Year's Day</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <script src="./js/calendar.js"></script>
-
-
+</section>
+ --}}
 
 
 

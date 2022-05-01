@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    @if (Request::is('home', 'aboutus', 'appointment', 'contactus'))
+    @if (Request::is('home', 'aboutus','calendar','appointment','contactus'))
         @include('BJMP.homecontents._navbar')
     @endif
 

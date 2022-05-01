@@ -23,63 +23,73 @@
                     <tbody>
 
                       <tr>
-                        <td>Name:</td>
-                        <td>{{ $record->name }}</td>
-                      </tr>
-                      <tr>
-                        <td>Birthdate:</td>
-                        <td>{{ $record->birthdate }}</td>
-                      </tr>
-                      <tr>
-                        <td>Address:</td>
-                        <td>{{ $record->address }}</td>
-                      </tr>
-                      <tr>
-                        <td>Religion:</td>
-                        <td>{{ $record->religion }}</td>
+                        <td class="text-left">Name:</td>
+                        <td class="text-left">{{ $record->name }}</td>
                       </tr>
 
                       <tr>
-                        <td>Civil Status:</td>
-                        <td>{{ $record->civil_status }}</td>
-                      </tr>
-                      <tr>
-                        <td>Built:</td>
-                        <td>{{ $record->built }}</td>
+                        <td class="text-left">Birthdate:</td>
+                        <td class="text-left">{{ $record->birthdate }}</td>
                       </tr>
 
                       <tr>
-                        <td>Complexion:</td>
-                        <td>{{ $record->complexion}}</td>
-                      </tr>
-                      <tr>
-                        <td>Eye Color:</td>
-                        <td>{{ $record->eye_color }}</td>
+                        <td class="text-left">Address:</td>
+                        <td class="text-left">{{ $record->address }}</td>
                       </tr>
 
                       <tr>
-                        <td>Sex:</td>
-                        <td>{{ $record->sex}}</td>
+                        <td class="text-left">Religion:</td>
+                        <td class="text-left">{{ $record->religion }}</td>
                       </tr>
+
                       <tr>
-                        <td>Blood Type:</td>
-                        <td>{{ $record->blood_type}}</td>
+                        <td class="text-left">Civil Status:</td>
+                        <td class="text-left">{{ $record->civil_status }}</td>
                       </tr>
+
                       <tr>
-                        <td>Educational Attainment:</td>
-                        <td>{{ $record->educational_attainment}}</td>
+                        <td class="text-left">Built:</td>
+                        <td class="text-left">{{ $record->built }}</td>
                       </tr>
+
                       <tr>
-                        <td>Date of Commitment:</td>
-                        <td>{{ $record->date_of_commitment}}</td>
+                        <td class="text-left">Complexion:</td>
+                        <td class="text-left">{{ $record->complexion}}</td>
                       </tr>
+
                       <tr>
-                        <td>Offense:</td>
-                        <td>{{ $record->offense}}</td>
+                        <td class="text-left">Eye Color:</td>
+                        <td class="text-left">{{ $record->eye_color }}</td>
                       </tr>
+
                       <tr>
-                        <td>Case number:</td>
-                        <td>{{ $record->case_number}}</td>
+                        <td class="text-left">Sex:</td>
+                        <td class="text-left">{{ $record->sex}}</td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-left">Blood Type:</td>
+                        <td class="text-left">{{ $record->blood_type}}</td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-left">Educational Attainment:</td>
+                        <td class="text-left">{{ $record->educational_attainment}}</td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-left">Date of Commitment:</td>
+                        <td class="text-left">{{ $record->date_of_commitment}}</td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-left">Offense:</td>
+                        <td class="text-left">{{ $record->offense}}</td>
+                      </tr>
+
+                      <tr>
+                        <td class="text-left">Case number:</td>
+                        <td class="text-left">{{ $record->case_number}}</td>
                       </tr>
 
                     </tbody>

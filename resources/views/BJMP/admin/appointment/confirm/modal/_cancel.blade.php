@@ -15,7 +15,7 @@
              <form action="{{ route('confirm.destroy') }}" method="POST">
                     @csrf
                     @method('delete')
-                    <input type="hidden" name="id" value="{{ $appointment->id }}">
+                    <input  type="hidden" name="id" value="{{ $appointment->id }}">
 
 
 
