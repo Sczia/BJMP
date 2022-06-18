@@ -1,7 +1,7 @@
 <div class="modal" id="add" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-heade bg-info">
+            <div class="modal-header bg-info">
 
                 <h5 class="modal-title  text-light font-weight-bold ">INFORMATION</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="close">
@@ -25,12 +25,12 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="birthdate" class="text-dark text-black font-weight-bold">BIRTHDATE</label>
-                                <input type="date" class="form-control" name="birthdate" id="birthdate" placeholder="Birthdate" value="">
+                                <input type="date" class="form-control" name="birth_date" id="birthdate" placeholder="Birthdate" value="">
                             </div>
 
                             <div class="form-group col-md-6">
                               <label for="age" class="text-dark text-black font-weight-bold">AGE</label>
-                                <input type="text" class="form-control" name="age" id="age" placeholder="Age" value="">
+                                <input type="number" class="form-control" name="age" id="age" placeholder="Age" value="">
                             </div>
                         </div>
 

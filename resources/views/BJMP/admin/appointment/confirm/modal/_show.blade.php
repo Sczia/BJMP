@@ -72,6 +72,11 @@
                       </tr>
 
                       <tr>
+                        <td class="text-left">Dorm number:</td>
+                        <td class="text-left">{{ $appointment->dorm_number }}</td>
+                      </tr>
+
+                      <tr>
                         <td class="text-left">Relationship to the Prisoner:</td>
                         <td class="text-left">{{ $appointment->prisoner_relationship }}</td>
                       </tr>
@@ -84,10 +89,12 @@
                       <tr>
                         <td class="text-left">Health Poll:</td>
                         <td class="text-left">{{ $appointment->health_poll }}</td>
-                      </tr>
+                    </tr>
 
                     </tbody>
+
                   </table>
+
 
             </div>
 

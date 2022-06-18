@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\Medical;
 use App\Models\MedicalRecyclebin;
 use Illuminate\Http\Request;
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class MedicalController extends Controller
 {
@@ -41,18 +42,28 @@ class MedicalController extends Controller
      */
     public function store(Request $request)
     {
+
         try {
-            Medical::create(
+            $medical = new Medical();
+            $medical->name = $request->input('name');
+            $medical->birth_date = $request->input('birth_date');
+            $medical->age = $request->input('age');
+            $medical->address = $request->input('address');
+            $medical->emergency_contact = $request->input('emergency_contact');
+            $medical->relationship = $request->input('relationship');
+            $medical->allergies = $request->input('allergies');
+            $medical->current_medication = $request->input('current_medication');
+            $medical->current_health_status = $request->input('current_health_status');
+            $medical->medical_history = $request->input('medical_history');
+            $medical->save();
 
-                $request->all()
 
-            );
             toast()->success('Success', 'You added a new record')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
             return redirect()->back();
         } catch (\Throwable $th) {
-            toast()->warning('Info', 'You did not input any record ')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            toast()->warning('Info', 'You did not input any record '. $th->getMessage())->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
             return redirect()->back();
-         }
+        }
 
         return redirect()->back();
     }
@@ -135,9 +146,30 @@ class MedicalController extends Controller
             return redirect()->route('medical.index');
         } catch (\Throwable $th) {
             toast()->warning('Warning', 'You did not deleted the record ')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
-             return redirect()->route('medical.index');
+            return redirect()->route('medical.index');
         }
 
         return redirect()->route('medical.index');
+    }
+
+
+    public function download($id)
+    {
+        $medical = Medical::findOrFail($id);
+        $templateProcessor = new TemplateProcessor('word-template-med/medical.docx');
+        $templateProcessor->setValue('id', $medical->id);
+        $templateProcessor->setValue('name', $medical->name);
+        $templateProcessor->setValue('birth_date', $medical->birth_date);
+        $templateProcessor->setValue('age', $medical->age);
+        $templateProcessor->setValue('address', $medical->address);
+        $templateProcessor->setValue('emergency_contact', $medical->emergency_contact);
+        $templateProcessor->setValue('relationship', $medical->relationship);
+        $templateProcessor->setValue('allergies', $medical->allergies);
+        $templateProcessor->setValue('current_medication', $medical->current_medication);
+        $templateProcessor->setValue('current_health_status', $medical->current_health_status);
+        $templateProcessor->setValue('medical_history', $medical->medical_history);
+        $fileName = $medical->name;
+        $templateProcessor->saveAs($fileName . '.docx');
+        return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
     }
 }

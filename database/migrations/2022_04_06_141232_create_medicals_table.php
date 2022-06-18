@@ -17,7 +17,7 @@ class CreateMedicalsTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('birth_date');
-            $table->string('age');
+            $table->integer('age');
             $table->string('address');
             $table->string('emergency_contact');
             $table->string('relationship');
@@ -25,7 +25,7 @@ class CreateMedicalsTable extends Migration
             $table->string('current_medication');
             $table->string('current_health_status');
             $table->string('medical_history');
-            $table->date('deleted_date');
+     
             $table->timestamps();
         });
     }

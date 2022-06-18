@@ -6,6 +6,7 @@ use App\Models\Contact;
 use App\Models\Pdl;
 use App\Models\PdlRecyclebin;
 use Illuminate\Http\Request;
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class PdlController extends Controller
 {
@@ -147,4 +148,31 @@ class PdlController extends Controller
         $pdl->delete();
         return redirect()->route('pdl.index');
     }
+
+
+    public function download($id)
+    {
+        $pdl = Pdl::findOrFail($id);
+        $templateProcessor = new TemplateProcessor('word-template-pdl/pdl.docx');
+        $templateProcessor->setValue('id', $pdl->id);
+        $templateProcessor->setValue('name', $pdl->name);
+        $templateProcessor->setValue('birth_date', $pdl->birth_date);
+        $templateProcessor->setValue('address', $pdl->address);
+        $templateProcessor->setValue('religion', $pdl->religion);
+        $templateProcessor->setValue('civil_status', $pdl->civil_status);
+        $templateProcessor->setValue('built', $pdl->built);
+        $templateProcessor->setValue('complexion', $pdl->complexion);
+        $templateProcessor->setValue('eye_color', $pdl->eye_color);
+        $templateProcessor->setValue('sex', $pdl->sex);
+        $templateProcessor->setValue('blood_type', $pdl->blood_type);
+        $templateProcessor->setValue('educational_attainment', $pdl->educational_attainment);
+        $templateProcessor->setValue('date_of_commitment', $pdl->date_of_commitment);
+        $templateProcessor->setValue('offense', $pdl->offense);
+        $templateProcessor->setValue('case_number', $pdl->case_number);
+        $fileName = $pdl->name;
+        $templateProcessor->saveAs($fileName . '.docx');
+        return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
+    }
 }
+
+

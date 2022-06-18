@@ -17,7 +17,7 @@ class CreateMedicalRecyclebinsTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('birth_date');
-            $table->string('age');
+            $table->integer('age');
             $table->string('address');
             $table->string('emergency_contact');
             $table->string('relationship');

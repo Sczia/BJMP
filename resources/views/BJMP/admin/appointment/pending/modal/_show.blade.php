@@ -65,12 +65,17 @@
 
                           <tr>
                             <td class="text-left">Date:</td>
-                            <td class="text-left"{{ $appointment->date }}</td>
+                            <td class="text-left">{{date('m/d/y',strtotime($appointment->date))  }} </td>
                           </tr>
 
                           <tr>
                             <td class="text-left">Name of the Prisoner:</td>
                             <td class="text-left">{{ $appointment->prisoner_name }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Dorm number:</td>
+                            <td class="text-left">{{ $appointment->dorm_number }}</td>
                           </tr>
 
                           <tr>

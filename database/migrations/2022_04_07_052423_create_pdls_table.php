@@ -29,7 +29,6 @@ class CreatePdlsTable extends Migration
             $table->string('date_of_commitment');
             $table->string('offense');
             $table->string('case_number');
-            $table->date('deleted_date')->nullable();
             $table->timestamps();
         });
     }

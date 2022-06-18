@@ -25,7 +25,8 @@ class appointmentSeeder extends Seeder
             'address' => '158 silangan, St. Brgy. Dayap, Calaan, Laguna',
             'date' => '22-10-22',
             'prisoner_name' => 'Alfredo Lo',
-            'prisoner_relationship' => 'Nothing',
+            'dorm_number'=> 'Dorm 1',
+            'prisoner_relationship' => 'Parents',
             'phone_number' => '09192054322',
             'health_poll' => 'Fully Vaccinated',
 

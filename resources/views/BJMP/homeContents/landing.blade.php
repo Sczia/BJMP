@@ -113,6 +113,7 @@
                  <div class="service-items">
                      <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/alpha.png" /></div>
                      <h2>ANNOUNCEMENT</h2>
+                     
                      @foreach ($announcement as $announcement)
                          <p> {{ $announcement->announce }}</p>
                      @endforeach

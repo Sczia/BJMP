@@ -94,7 +94,7 @@
 
                     </tbody>
                   </table>
-
+                  <a href= "{{ route('pdl.download',$record->id)}}" class="btn btn-sm btn-success">EXPORT WORD </a>
             </div>
             <div class=="modal-footer">
 

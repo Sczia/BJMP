@@ -74,6 +74,7 @@
 
                     </tbody>
                   </table>
+                  <a href= "{{ route('medical.download',$record->id)}}" class="btn btn-sm btn-success">EXPORT WORD </a>
 
             </div>
             <div class=="modal-footer">

@@ -9,9 +9,11 @@
                 <a type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#add">
                     <span class="d-flex align-items-center"><i class="fas fa-plus-circle"></i>&#160; Add</span>
                 </a>
+
                 <a href="{{ route('medical.create') }}" class="btn btn-success mr-3">
                     <span class="d-flex align-items-center"><i class="fa-solid fa-file-pdf"></i>&#160; print</span>
                 </a>
+                
                 @include('BJMP.admin.records.medical.modal._add')
 
             </div>

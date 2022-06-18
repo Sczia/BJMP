@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
             pdlSeeder::class,
             pdlrecyclebinSeeder::class,
             scheduleSeeder::class,
-            eventSeeder::class
+            eventSeeder::class,
+            UserSeeder::class
         ]);
     }
 }

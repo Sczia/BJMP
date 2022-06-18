@@ -2,8 +2,8 @@
 @section('page-level-css')
 <link rel="stylesheet" href="{{asset('css/guidelines.css')}}">
 <link rel="stylesheet" href="{{asset('css/error.css')}}">
-
 @endsection
+
 @section('contents')
 @if ($count>=10)
 

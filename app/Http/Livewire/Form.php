@@ -14,7 +14,7 @@ class Form extends Component
     public $email;
     public $address;
     public $date;
-    public $prisoner_name, $prisoner_relationship, $phone_number;
+    public $prisoner_name, $dorm_number, $prisoner_relationship, $phone_number;
     public $health_poll;
 
     public $q1, $q2, $q3, $q4, $q5, $q6, $q7, $q8, $q9;
@@ -52,7 +52,8 @@ class Form extends Component
         'email' => 'Email Address',
         'date' => 'Date',
         'prisoner_name' => 'Prisoner Name',
-        'prisoner_relationship' => 'Relation ship to the Prisoner',
+        'dorm_number'=> 'Dorm',
+        'prisoner_relationship' => 'Relationship to the Prisoner',
         'phone_number' => 'Phone Number',
         'address' => 'Address',
 
@@ -98,6 +99,7 @@ class Form extends Component
                 'address' => 'required|string',
                 'date' => 'required',
                 'prisoner_name' => 'required|string',
+                'dorm_number'=> 'required|string',
                 'prisoner_relationship' => 'required|string',
                 'phone_number' => 'required|numeric|digits:11',
                 'health_poll' => 'required',
@@ -138,6 +140,7 @@ class Form extends Component
                 'address' => 'required|string',
                 'date' => 'required',
                 'prisoner_name' => 'required|string',
+                'dorm_number'=> 'required|string',
                 'prisoner_relationship' => 'required|string',
                 'phone_number' => 'required|numeric|digits:11',
                 'health_poll' => 'required',
@@ -177,10 +180,11 @@ class Form extends Component
             'address' => $this->address,
             'date' => $this->date,
             'prisoner_name' => $this->prisoner_name,
+            'dorm_number' => $this->dorm_number,
             'prisoner_relationship' => $this->prisoner_relationship,
             'phone_number' => $this->phone_number,
             'health_poll' => $this->health_poll,
-         
+
             'temp' => $this->q1,
             'resp' => $this->q2,
             'eq_resp' => $this->q2 === "None" ? null : $this->eq2,
@@ -202,38 +206,7 @@ class Form extends Component
         try {
             Appointment::create($appointment);
 
-            /* $appointment = new Appointment();
-            $appointment->first_name = $this->first_name;
-            $appointment->middle_name = $this->middle_name;
-            $appointment->last_name = $this->last_name;
-            $appointment->age = $this->age;
-            $appointment->gender = $this->gender;
-            $appointment->email = $this->email;
-            $appointment->address = $this->address;
-            $appointment->date = $this->date;
-            $appointment->prisoner_name = $this->prisoner_name;
-            $appointment->prisoner_relationship = $this->prisoner_relationship;
-            $appointment->phone_number = $this->phone_number;
-            $appointment->health_poll = $this->health_poll;
-            $appointment->save();
-            $health_poll = new HealthDeclaration();
-            $health_poll->temp = $this->q1;
-            $health_poll->resp = $this->q2;
-            $health_poll->eq_resp = $this->q2 === "None" ? null : $this->eq2;
-            $health_poll->travel = $this->q3;
-            $health_poll->eq_travel = $this->q3 === "No" ? null : $this->eq3;
-            $health_poll->history = $this->q4;
-            $health_poll->eq_history = $this->q4 === "No" ? null : $this->eq4;
-            $health_poll->hospital = $this->q5;
-            $health_poll->eq_hospital = $this->q5 === "No" ? null : $this->eq5;
-            $health_poll->public = $this->q6;
-            $health_poll->eq_public = $this->q4 === "No" ? null : $this->eq4;
-            $health_poll->close = $this->q7;
-            $health_poll->front = $this->q8;
-            $health_poll->eq_front = $this->q8 === "No" ? null : $this->eq8;
-            $health_poll->place = $this->q9;
-            $health_poll->eq_place = $this->q9 === "No" ? null : $this->eq9;
-            $health_poll->save(); */
+
             $this->currentStep = 3;
         } catch (\Throwable $th) {
          dd($th);

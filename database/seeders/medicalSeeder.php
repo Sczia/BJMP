@@ -26,7 +26,7 @@ class medicalSeeder extends Seeder
             'current_medication' => 'good',
             'current_health_status' => 'stable',
             'medical_history' => 'none',
-            'deleted_date' => '22-10-22',
+
         ];
 
         Medical::create($data);

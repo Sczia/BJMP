@@ -24,6 +24,7 @@ class CreateAppointmentsTable extends Migration
             $table->string('address');
             $table->date('date');
             $table->string('prisoner_name');
+            $table->string('dorm_number');
             $table->string('prisoner_relationship');
             $table->string('phone_number');
             $table->string('health_poll');

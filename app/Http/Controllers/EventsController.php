@@ -20,6 +20,7 @@ class EventsController extends Controller
         $count=Contact::count();
         $messages = Contact::paginate(5);
         return view('BJMP.admin.events.index', compact('events','count','messages'));
+
     }
 
     /**
@@ -41,9 +42,11 @@ class EventsController extends Controller
     public function store(Request $request)
     {
         Events::create([
-            'date' => $request->input('date'),
+            'title' => $request->input('title'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
             'time' => $request->input('time'),
-            'event_title' => $request->input('title'),
+            'color' => $request->input('color'),
         ]);
         return back();
     }
@@ -80,9 +83,11 @@ class EventsController extends Controller
     public function update(Request $request,$id)
     {
         $event = Events::find($id);
-        $event->date = $request->input('date');
+        $event->title = $request->input('title');
+        $event->start = $request->input('start');
+        $event->end = $request->input('end');
         $event->time = $request->input('time');
-        $event->event_title = $request->input('title');
+        $event->color = $request->input('color');
         $event->save();
         return back();
     }
@@ -93,8 +98,12 @@ class EventsController extends Controller
      * @param  \App\Models\events  $events
      * @return \Illuminate\Http\Response
      */
-    public function destroy(events $events)
+    public function destroy(events $id)
     {
-        //
+        $event =Events::find($id);
+        $event->delete();
+        return redirect()->route('events.index');
+
+       
     }
 }

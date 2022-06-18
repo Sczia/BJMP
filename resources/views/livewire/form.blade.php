@@ -3,11 +3,11 @@
         <div class="card text-black bg-default">
             <img class="card-img-top" src="holder.js/100px180/" alt="">
             <div class="card-body">
-                 <b>{{ request()->name }}</b>
+                <b>{{ request()->name }}</b>
                 Please wait for the confirmation of your schedule, Kindly check your
                 Email and your SMS for the verification of your request.
                 <b>{{ request()->email }}</b>
-             </br>Thank you </br></br>
+                </br>Thank you </br></br>
                 <a href="{{ route('landing') }}" class="btn btn-sm btn-success">Back to home</a>
             </div>
         </div>
@@ -159,6 +159,7 @@
                                     </span>
                                 @enderror
                             </div>
+
                             <div class="col-md-3 col-lg-2 mb-3 me-lg-2">
                                 <label for="age" class="text-dark h5 fw-normal form-title">Age <span
                                         class="text-danger">*</span></label>
@@ -171,6 +172,7 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-md-6 col-lg-6 mb-3 ">
                                 <label for="email" class="text-dark h5 fw-normal form-title">Email <span
@@ -208,39 +210,65 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-md-6 col-lg-6 mb-3 ">
                                 <label for="prisoner_name" class="text-dark h5 fw-normal form-title">Prisnoer name <span
                                         class="text-danger">*</span></label>
                                 <input class="form-control @error('prisoner_name') is-invalid @enderror" type="text"
-                                    name="prisoner_name" id="prisoner_name" placeholder="Prisoner's Naame" wire:model="prisoner_name">
+                                    name="prisoner_name" id="prisoner_name" placeholder="Prisoner's Naame"
+                                    wire:model="prisoner_name">
                                 @error('prisoner_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
+
+
+                            <div class="col-md-6 col-lg-6 mb-3 ">
+                                <label for="dorm_number" class="text-dark h5 fw-normal form-title">Dorm No. <span
+                                        class="text-danger">*</span></label>
+                                <input class="form-control @error('dorm_number') is-invalid @enderror" type="text"
+                                    name="dorm_number" id="dorm_number" placeholder="Dorm number"
+                                    wire:model="dorm_number">
+                                @error('dorm_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
+
+
                         <div class="row">
                             <div class="col-md-6 col-lg-6 mb-3 ">
                                 <label for="prisoner_relationship"
                                     class="text-dark h5 fw-normal form-title">Relationship to
-                                    the
-                                    prisoner <span class="text-danger">*</span></label>
-                                <input class="form-control @error('prisoner_relationship') is-invalid @enderror"
-                                    type="text" name="prisoner_relationship" id="prisoner_relationship" placeholder="Relationship to Prisoner"
-                                    wire:model="prisoner_relationship">
+                                    the prisoner <span class="text-danger">*</span></label>
+                                <select class="form-select @error('prisoner_relationship') is-invalid @enderror"
+                                    aria-label="Default select example" wire:model="prisoner_relationship">
+                                    <option selected>Select Menu</option>
+                                    <option value="Parents">Parents</option>
+                                    <option value="Partner">Partner</option>
+                                    <option value="Sibling">Sibling</option>
+                                    <option value="Child">Child</option>
+                                </select>
+
                                 @error('prisoner_relationship')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
+
+
                             <div class="col-md-6 col-lg-6 mb-3 ">
                                 <label for="phone_number" class="text-dark h5 fw-normal form-title">Phone No. <span
                                         class="text-danger">*</span></label>
                                 <input class="form-control @error('phone_number') is-invalid @enderror" type="text"
-                                    name="phone_number" id="phone_number" placeholder="Cellphone/Telephone" wire:model="phone_number">
+                                    name="phone_number" id="phone_number" placeholder="Cellphone/Telephone"
+                                    wire:model="phone_number">
                                 @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -248,16 +276,18 @@
                                 @enderror
                             </div>
                         </div>
+
+
                         <div class="row">
                             <div class="col-md-12 col-lg-12 mb-3 ">
                                 <label for="health_poll" class="text-dark h5 fw-normal form-title">Health Poll <span
                                         class="text-danger">*</span></label>
                                 <div class="">
                                     <label for="poll 1"
-                                        class="radio-inline py-2 me-1 gender @error('health_poll') is-invalid @enderror"> <input
-                                            type="radio" class="" name="health_poll" id="second_dose"
+                                        class="radio-inline py-2 me-1 gender @error('health_poll') is-invalid @enderror">
+                                        <input type="radio" class="" name="health_poll" id="second_dose"
                                             value="Second Dose" wire:model="health_poll">
-                                            First Dose</label>
+                                        First Dose</label>
                                     <label for="poll 2"
                                         class="radio-inline py-2 me-1 gender @error('health_poll') is-invalid @enderror"><input
                                             type="radio" class="" name="health_poll" id="fully_vaccinated"
@@ -272,7 +302,7 @@
                                         class="radio-inline py-2 me-1 gender @error('health_poll') is-invalid @enderror"><input
                                             type="radio" class="" name="health_poll" id="no_vaccine"
                                             value="No Vaccine" wire:model="health_poll">
-                                       No Vaccine</label>
+                                        No Vaccine</label>
 
                                     @error('health_poll')
                                         <span class="invalid-feedback" role="alert">
@@ -302,8 +332,8 @@
                         <div class="row mb-2">
                             <div class="col-md-6 col-lg-6 mb-3 ">
                                 <h5 class="fw-bold text-danger">TEMPERATURE</h5>
-                                <label for="q1" class="text-dark h6 fw-normal form-title">1. Does your temperature is >38°C <span
-                                        class="text-danger">*</span></label>
+                                <label for="q1" class="text-dark h6 fw-normal form-title">1. Does your temperature is
+                                    >38°C <span class="text-danger">*</span></label>
                                 <div class=" ms-2">
                                     <label for="yes"
                                         class="d-flex align-items-center @error('q1') is-invalid @enderror"> <input
@@ -325,8 +355,8 @@
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
                                 <h5 class="fw-bold text-danger">RESPERATORY SYMPTOMS</h5>
-                                <label for="q1" class="text-dark h6 fw-normal form-title">2. Presence of the following <span
-                                        class="text-danger">*</span></label>
+                                <label for="q1" class="text-dark h6 fw-normal form-title">2. Presence of the following
+                                    <span class="text-danger">*</span></label>
                                 <div class="mb-2 ms-2">
                                     <label for="cough"
                                         class="@error('q2') is-invalid @enderror d-flex align-items-center"> <input
@@ -390,7 +420,8 @@
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
                                 <h5 class="fw-bold text-danger">TRAVEL and HISTORY </h5>
-                                <label for="q3" class="text-dark h6 fw-normal form-title">3.Countires or Local places with known confirmed cases of COVID-19. <span
+                                <label for="q3" class="text-dark h6 fw-normal form-title">3.Countires or Local places
+                                    with known confirmed cases of COVID-19. <span
                                         class="text-danger">*</span></label>
                                 <div class="ms-2">
                                     <label for="yes3"
@@ -428,7 +459,8 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
-                                <label for="q4" class="text-dark h6 fw-normal form-title">4.Have you been in a close contact with a relative or friend who has been to a country or
+                                <label for="q4" class="text-dark h6 fw-normal form-title">4.Have you been in a close
+                                    contact with a relative or friend who has been to a country or
                                     place with confirmed case of COVID-39. <span
                                         class="text-danger">*</span></label>
                                 <div class="ms-2">
@@ -467,7 +499,8 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
-                                <label for="q5" class="text-dark h6 fw-normal form-title">5. Have you been in a hospital/health care facility with confirmed cases of COVID-19. <span
+                                <label for="q5" class="text-dark h6 fw-normal form-title">5. Have you been in a
+                                    hospital/health care facility with confirmed cases of COVID-19. <span
                                         class="text-danger">*</span></label>
                                 <div class="ms-2">
                                     <label for="yes5"
@@ -505,8 +538,8 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
-                                <label for="q6" class="text-dark h6 fw-normal form-title">6. Have you been to a public market or grocery store? <span
-                                        class="text-danger">*</span></label>
+                                <label for="q6" class="text-dark h6 fw-normal form-title">6. Have you been to a public
+                                    market or grocery store? <span class="text-danger">*</span></label>
                                 <div class="ms-2">
                                     <label for="yes6"
                                         class="@error('q6') is-invalid @enderror d-flex align-items-center"> <input
@@ -541,7 +574,8 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
-                                <label for="q7" class="text-dark h6 fw-normal form-title">7. Have you been in CLOSE contact with a confirmed cases of COVID-19. <span
+                                <label for="q7" class="text-dark h6 fw-normal form-title">7. Have you been in CLOSE
+                                    contact with a confirmed cases of COVID-19. <span
                                         class="text-danger">*</span></label>
                                 <div class="ms-2">
                                     <label for="yes7"
@@ -563,11 +597,13 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
-                                <label for="q8" class="text-dark h6 fw-normal form-title">8. Have you had a CLOSE contact with or currentlyliving with relative/friend who is a
-                                    FRONTLINER? (such as: health care worker, law inforcer or uninformed personnel, security
+                                <label for="q8" class="text-dark h6 fw-normal form-title">8. Have you had a CLOSE
+                                    contact with or currentlyliving with relative/friend who is a
+                                    FRONTLINER? (such as: health care worker, law inforcer or uninformed personnel,
+                                    security
                                     gaurd, member of LGU or NGO & others with almost the
-                                    same role including endor/cahsier in a public market/grocery store & other alike. <span
-                                        class="text-danger">*</span></label>
+                                    same role including endor/cahsier in a public market/grocery store & other alike.
+                                    <span class="text-danger">*</span></label>
                                 <div class="ms-2">
                                     <label for="yes8"
                                         class="@error('q8') is-invalid @enderror d-flex align-items-center"> <input
@@ -604,7 +640,8 @@
                         </div>
                         <div class="row mb-2">
                             <div class="col-md-12 col-lg-12 mb-3 ">
-                                <label for="q9" class="text-dark h6 fw-normal form-title">9. Did you go out of your place or go somewhere else duriing your quarantine period. <span
+                                <label for="q9" class="text-dark h6 fw-normal form-title">9. Did you go out of your
+                                    place or go somewhere else duriing your quarantine period. <span
                                         class="text-danger">*</span></label>
                                 <div class="ms-2">
                                     <label for="yes9"
@@ -644,7 +681,8 @@
                             <h6 class="fw-bold">
                                 Declaration: The Information I have given herein is true, correct and complete. I
                                 understand
-                                that failure to answer any question or any testified response may have serious consiquences.
+                                that failure to answer any question or any testified response may have serious
+                                consiquences.
                                 (Article 171 &172 od the Reversed Penal Code
                                 of the Philippines.)
                             </h6>

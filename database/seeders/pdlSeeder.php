@@ -30,7 +30,7 @@ class pdlSeeder extends Seeder
             'date_of_commitment' => '09-11-1997',
             'offense' => 'none',
             'case_number' => '001',
-            'deleted_date' => '22-10-22',
+
         ];
 
      Pdl::create($data);

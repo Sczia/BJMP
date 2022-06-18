@@ -89,15 +89,15 @@ class ConfirmController extends Controller
             ];
 
             $data = [
-                'api_key' =>'24uYdd3CINZrkd4yyWCY8qh0MuK', // API KEY
+                'api_key' => '24uYdd3CINZrkd4yyWCY8qh0MuK', // API KEY
                 'api_secret' => 'GwtTzi1W9hJSUG6VZrRZVRKdif3cjHJLrvNIej13', // API SECRET
-                'to' =>   "63".Str::substr($confirm->phone_number,1,10), // replace with mobile number ng sesendan
+                'to' =>   "63" . Str::substr($confirm->phone_number, 1, 10), // replace with mobile number ng sesendan
                 'text' => "Congratulations your appointment has been approved. Thank you!", // Text message mo
                 'from' => "Mail from Municipal Jail of Los Banos" // Y0u need paid account para palitan ito.
-                 ];
+            ];
 
 
-              $response= Http::asForm()->post('https://api.movider.co/v1/sms',$data);
+            $response = Http::asForm()->post('https://api.movider.co/v1/sms', $data);
 
 
 
@@ -105,6 +105,7 @@ class ConfirmController extends Controller
 
             $pending = Appointment::findOrFail($id);
             $pending->delete();
+
             toast()->success('Success', 'You confirmed the request')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
             return redirect()->route('confirm.index');
         } catch (\Throwable $th) {
