@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Medical;
 use App\Models\MedicalRecyclebin;
+use PhpOffice\PhpWord\TemplateProcessor;
 
 class MedicalRecyclebinController extends Controller
 {
@@ -107,4 +108,25 @@ class MedicalRecyclebinController extends Controller
         $medical->delete();
         return redirect()->route('medical.recyclebin.index');
     }
+
+    public function download($id)
+    {
+        $medical = MedicalRecyclebin::findOrFail($id);
+        $templateProcessor = new TemplateProcessor('word-archive-medical/medical-archive.docx');
+        $templateProcessor->setValue('id', $medical->id);
+        $templateProcessor->setValue('name', $medical->name);
+        $templateProcessor->setValue('birth_date', $medical->birth_date);
+        $templateProcessor->setValue('age', $medical->age);
+        $templateProcessor->setValue('address', $medical->address);
+        $templateProcessor->setValue('emergency_contact', $medical->emergency_contact);
+        $templateProcessor->setValue('relationship', $medical->relationship);
+        $templateProcessor->setValue('allergies', $medical->allergies);
+        $templateProcessor->setValue('current_medication', $medical->current_medication);
+        $templateProcessor->setValue('current_health_status', $medical->current_health_status);
+        $templateProcessor->setValue('medical_history', $medical->medical_history);
+        $fileName = $medical->name;
+        $templateProcessor->saveAs($fileName . '.docx');
+        return response()->download($fileName . '.docx')->deleteFileAfterSend(true);
+    }
+
 }

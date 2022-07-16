@@ -29,7 +29,7 @@
 
                           <tr>
                             <td class="text-left">Birthdate:</td>
-                            <td class="text-left">{{ $record->birthdate }}</td>
+                            <td class="text-left">{{ $record->birth_date }}</td>
                           </tr>
 
                           <tr>
@@ -64,16 +64,17 @@
 
                           <tr>
                             <td class="text-left">Current Health Status:</td>
-                            <td class="text-left">{{ $record->current_health_htatus }}</td>
+                            <td class="text-left">{{ $record->current_health_status }}</td>
                           </tr>
 
                           <tr>
                             <td class="text-left">Medical History:</td>
-                            <td class="text-left"{{ $record->meddical_history}}</td>
+                            <td class="text-left">{{ $record->medical_history}}</td>
                           </tr>
 
                     </tbody>
                   </table>
+                {{--   <a href="{{ route('medical.download', $record->id) }}" class="btn btn-sm btn-success">EXPORT WORD </a> --}}
 
             </div>
             <div class=="modal-footer">

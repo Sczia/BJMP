@@ -4,6 +4,7 @@
 
 
  {{ $details['body'] }}
+ 
 
 
 Thanks you!<br>

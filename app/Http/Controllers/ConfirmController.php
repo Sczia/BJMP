@@ -59,6 +59,7 @@ class ConfirmController extends Controller
             $confirm->address = $appointment->address;
             $confirm->date = $appointment->date;
             $confirm->prisoner_name = $appointment->prisoner_name;
+            $confirm->dorm_number = $appointment->dorm_number;
             $confirm->prisoner_relationship = $appointment->prisoner_relationship;
             $confirm->phone_number = $appointment->phone_number;
             $confirm->health_poll = $appointment->health_poll;
@@ -89,18 +90,22 @@ class ConfirmController extends Controller
             ];
 
             $data = [
-                'api_key' => '24uYdd3CINZrkd4yyWCY8qh0MuK', // API KEY
-                'api_secret' => 'GwtTzi1W9hJSUG6VZrRZVRKdif3cjHJLrvNIej13', // API SECRET
+                'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
+                'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
+                'text' => "Hello! Congratulations your Request Appointment has been approved. ",
                 'to' =>   "63" . Str::substr($confirm->phone_number, 1, 10), // replace with mobile number ng sesendan
-                'text' => "Congratulations your appointment has been approved. Thank you!", // Text message mo
-                'from' => "Mail from Municipal Jail of Los Banos" // Y0u need paid account para palitan ito.
+                'from' => "MOVIDER"
+
+
+              /*   'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
+                'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
+                'to' =>   "63" . Str::substr($confirm->phone_number, 1, 10), // replace with mobile number ng sesendan
+                'text' => "Congratulations your appointment has been approved. ", // Text message mo
+                'from' => "Mail from Municipal Jail of Los Banos" / */ // Y0u need paid account para palitan ito.
             ];
 
 
             $response = Http::asForm()->post('https://api.movider.co/v1/sms', $data);
-
-
-
             Mail::to($request->input('email'))->send(new WelcomeMail($details));
 
             $pending = Appointment::findOrFail($id);

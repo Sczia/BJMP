@@ -1,6 +1,5 @@
 @extends('BJMP.mainlayout')
 @section('page-level-css')
-
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('container/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/landing.css') }}">
@@ -21,8 +20,8 @@
                 aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
                 class=""></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
-                class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active"
+                aria-current="true"></button>
         </div>
 
 
@@ -37,8 +36,8 @@
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <!--   <h1>Example headline.</h1>
-                                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> -->
+                                    <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> -->
                     </div>
                 </div>
             </div>
@@ -52,8 +51,8 @@
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <!--    <h1>Example headline.</h1>
-                                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> -->
+                                    <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p> -->
                     </div>
                 </div>
             </div>
@@ -67,8 +66,8 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <!--  <h1>Another example headline.</h1>
-                                <p>Some representative placeholder content for the second slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p> -->
+                                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p> -->
                     </div>
                 </div>
             </div>
@@ -82,8 +81,8 @@
                 <div class="container">
                     <div class="carousel-caption text-end">
                         <!-- <h1>One more for good measure.</h1>
-                                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
+                                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p> -->
                     </div>
                 </div>
             </div>
@@ -102,27 +101,26 @@
 
 
     <!--------------------------------------------------Announcement--------------------------------------------------- -->
-     <section id="attendance">
-         <div class="services contain">
-                <div class="service-top">
+    <section id="attendance">
+        <div class="services contain">
+            <div class="service-top">
                 <h1 class="section-title">ANNOU<span>NC</span>EMENT</h1>
 
 
             </div>
-             <div class="service-below">
-                 <div class="service-items">
-                     <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/alpha.png" /></div>
-                     <h2>ANNOUNCEMENT</h2>
-                     
-                     @foreach ($announcement as $announcement)
-                         <p> {{ $announcement->announce }}</p>
-                     @endforeach
+            <div class="service-below">
+                <div class="service-items">
+                    <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/alpha.png" /></div>
+
+                    @foreach ($announcement as $announcement)
+                        <p> {{ $announcement->announce }}</p>
+                    @endforeach
 
 
-                 </div>
-             </div>
-         </div>
-     </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!--------------------------------------------------Services--------------------------------------------------- -->
@@ -132,46 +130,46 @@
                 <h1 class="section-title">SCHE<span>D</span>ULE</h1>
                 <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum deleniti maiores pariatur assumenda quas magni et, doloribus quod voluptate quasi molestiae magnam officiis dolorum, dolor provident atque molestias voluptatum explicabo!</p> -->
             </div>
-    <!-- Service Section -->
-    <section id="services">
-        <div class="services container">
-            <div class="service-bottom">
-                <div class="service-item">
-                    <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/so-so.png" /></div>
-                    <h2>Paabot</h2>
+            <!-- Service Section -->
+            <section id="services">
+                <div class="services container">
+                    <div class="service-bottom">
+                        <div class="service-item">
+                            <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/so-so.png" /></div>
+                            <h2>Paabot</h2>
 
-                    <p>Days: {{ $paabot->day }}</p>
-                    <p>Time: {{ $paabot->time }}</p>
-                    <p>Dorm Schedule: {{ $paabot->dorm }} </p>
+                            <p>Days: {{ $paabot->day }}</p>
+                            <p>Time: {{ $paabot->time }}</p>
+                            <p>Dorm Schedule: {{ $paabot->dorm }} </p>
 
+                        </div>
+                        <div class="service-item">
+                            <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/clock.png" /></div>
+                            <h2>E-Dalaw</h2>
+
+                            <p> Days: {{ $dalaw->day }}</p>
+                            <p>Time: {{ $dalaw->time }}</p>
+                            <p>Dorm Schedule: {{ $dalaw->dorm }}</p>
+
+
+                        </div>
+                        <div class="service-item">
+                            <div class="icon">{{-- <img src="https://img.icons8.com/bubbles/100/000000/services.png" /> --}}<img
+                                    src="https://img.icons8.com/bubbles/50/000000/phone-office.png" /></div>
+                            <h2>E-Tawag</h2>
+
+                            <p>Days: {{ $tawag->day }}</p>
+                            <p>Time: {{ $tawag->time }}</p>
+                            <p>Dorm Schedule: {{ $tawag->dorm }}</p>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/clock.png" /></div>
-                    <h2>E-Dalaw</h2>
+            </section>
+            <!-- End Service Section -->
 
-                    <p> Days: {{ $dalaw->day }}</p>
-                    <p>Time: {{ $dalaw->time }}</p>
-                    <p>Dorm Schedule: {{ $dalaw->dorm }}</p>
-
-
-                </div>
-                <div class="service-item">
-                    <div class="icon">{{-- <img src="https://img.icons8.com/bubbles/100/000000/services.png" /> --}}<img
-                            src="https://img.icons8.com/bubbles/50/000000/phone-office.png" /></div>
-                    <h2>E-Tawag</h2>
-
-                    <p>Days: {{ $tawag->day }}</p>
-                    <p>Time: {{ $tawag->time }}</p>
-                    <p>Dorm Schedule: {{ $tawag->dorm }}</p>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Service Section -->
-
-    <!--------------------------------------------------CALENDAR---------------------------------------------------- -->
- {{--    <section  id="services">
+            <!--------------------------------------------------CALENDAR---------------------------------------------------- -->
+            {{-- <section  id="services">
         <div class="services container">
             <div class="service-top " >
                 <h1 class="section-title">CAL<span>EN</span>DAR</h1>
@@ -180,8 +178,7 @@
 <section>
     <div id='calendar'></div>
 
-</section>
- --}}
+</section> --}}
 
 
 
@@ -237,8 +234,8 @@
                             </div>
                         </div>
                         <div class="contact-item">
-                            <div class="icon"><img
-                                    src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+                            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" />
+                            </div>
                             <div class="contact-info">
                                 <h1>Address</h1>
                                 <h2>Municipal Jail of Los Baños PCAARRD Rd, Brgy Timugan, Los Baños, Laguna</h2>
@@ -261,7 +258,7 @@
                         <div class="info-container-left">
                             <a href="./appform.html">
                                 <i class="fa-solid fa-calendar-check"></i>
-                                <span>Appointment Form    / </span>
+                                <span>Appointment Form / </span>
                             </a>
                             <a href="https://www.facebook.com/losbanos.municipaljail">
                                 <i class="fa-brands fa-facebook"></i>
@@ -279,10 +276,10 @@
 
 
         @section('page-level-js')
-        <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"> </script>
-            <script src="{{ asset('js/landing.js') }}"> </script>
-            <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"> </script>
-            <script src="{{ asset('vendor/jquery/jquery.js') }}"> </script>
-            <script src="{{ asset('vendor/bootstrap/') }}"> </script>
+            <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/landing.js') }}"></script>
+            <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('vendor/jquery/jquery.js') }}"></script>
+            <script src="{{ asset('vendor/bootstrap/') }}"></script>
         @endsection
     @endsection

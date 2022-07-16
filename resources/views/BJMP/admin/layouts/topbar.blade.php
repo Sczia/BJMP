@@ -9,13 +9,7 @@
  <form
         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                    <i class="fas fa-search fa-sm"></i>
-                </button>
-            </div>
+          
         </div>
     </form>
 
@@ -108,17 +102,13 @@
             <!-- Dropdown - Messages -->
            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
+                <h6 class="dropdown-header bg-success border-0">
                     Message Center
                 </h6>
                 @foreach ($messages as $message )
 
                     <a class="dropdown-item d-flex align-items-center" href="{{route('contact.index')}}">
-                        <div class="dropdown-list-image mr-3">
-                            <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                            alt="...">
-                            <div class="status-indicator bg-success"></div>
-                        </div>
+
 
                         <div class="font-weight-bold">
                             <div class="text-truncate">{{ $message->name }}</div>

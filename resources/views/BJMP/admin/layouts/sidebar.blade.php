@@ -2,12 +2,8 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin') }}">
-        <div class="sidebar-brand-icon rotate-n-15">
 
-            <i class="fas fa-building"></i>
-
-        </div>
-        <div class="sidebar-brand-text mx-3">MJ Los Baños Laguna <sup></sup></div>
+        <div class="sidebar-brand-text mx-3 text-center">MJ Los Baños Laguna <sup></sup></div>
     </a>
 
     <!-- Divider -->
@@ -134,11 +130,11 @@
 
 
 
-    <li class=" nav-item ">
+   {{--  <li class=" nav-item ">
         <a class="nav-link" href="{{ route('attendance.index') }}">
             <i class="fas fa-list-ol"></i>
             <span>Attendance</span></a>
-    </li>
+    </li> --}}
     {{-- ---------------------------------------RECORDS------------------------------------------------- --}}
 
     <li class="nav-item">

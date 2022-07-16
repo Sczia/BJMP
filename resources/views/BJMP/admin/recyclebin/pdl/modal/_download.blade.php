@@ -3,33 +3,105 @@
     <div class="modal-dialog modal-lg" role document="document">
         <div class="modal-content">
             <div class="modal-header bg-success">
-                <h5 class="modal-title  text-light font-weight-bold" id="exampleModalLongtitle">PDL's Recyclebin</h5>
+                <h5 class="modal-title  text-light font-weight-bold" id="exampleModalLongtitle">Pdl Information</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
 
             </div>
-            <div class="modal-body d-flex flex-column">
-                <div class="modal-body-top d-flex">
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
 
+                       <h3 class="modal-title text-dark font-weight-bold text-center">INFORMATION</h3>
+
+
+                      </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td class="text-left">Name:</td>
+                            <td class="text-left">{{ $record->name }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Birthdate:</td>
+                            <td class="text-left">{{ $record->birthdate }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Address:</td>
+                            <td class="text-left">{{ $record->address }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Religion:</td>
+                            <td class="text-left">{{ $record->religion }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Civil Status:</td>
+                            <td class="text-left">{{ $record->civil_status }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Built:</td>
+                            <td class="text-left">{{ $record->built }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Complexion:</td>
+                            <td class="text-left">{{ $record->complexion}}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Eye Color:</td>
+                            <td class="text-left">{{ $record->eye_color }}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Sex:</td>
+                            <td class="text-left">{{ $record->sex}}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Blood Type:</td>
+                            <td class="text-left">{{ $record->blood_type}}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Educational Attainment:</td>
+                            <td class="text-left">{{ $record->educational_attainment}}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Date of Commitment:</td>
+                            <td class="text-left">{{ $record->date_of_commitment}}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Offense:</td>
+                            <td class="text-left">{{ $record->offense}}</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-left">Case number:</td>
+                            <td class="text-left">{{ $record->case_number}}</td>
+                          </tr>
+
+                    </tbody>
+                  </table>
+
+                  <div class="d-flex justify-content-center">
+
+                    <a href="{{ route('pdl.create') }}" class="btn btn-primary mr-3">
+                        <span class="d-flex align-items-center"><i class="fa-solid fa-download"></i>&#160; DOWNLOAD</span>
+                    </a>
                 </div>
 
-                <div class="modal-body-bottom mt-2" >
-                    <h3>{{ $record->name }}</h3>
-                    <h3>{{ $record->birthdate }}</h3>
-                    <h3>{{ $record->age }}</h3>
-                    <h3>{{ $record->address }}</h3>
-                    <h3>{{ $record->emergency_contact }}</h3>
-                    <h3>{{ $record->relationships }}</h3>
-                    <h3>{{ $record->allergies }}</h3>
-                    <h3>{{ $record->current_medication }}</h3>
-                    <h3>{{ $record->current_health_status }}</h3>
-                    <h3>{{ $record->medical_history }}</h3>
-
-
-
-
-                </div>
             </div>
             <div class=="modal-footer">
 

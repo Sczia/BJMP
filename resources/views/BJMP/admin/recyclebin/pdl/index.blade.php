@@ -34,9 +34,9 @@
                                 </td>
 
                                 <td class="d-flex justify-content-center align-items-center">
-                                    <a class="btn btn-sm  btn-outline-success mr-1" href="" data-toggle="modal"
+                                   {{--  <a class="btn btn-sm  btn-outline-success mr-1" href="" data-toggle="modal"
                                         data-target="#download{{ $record->id }}"><i class="fas fa-download"></i></a>
-                                    {{-- @include('BJMP.admin.appointment.pending.modal._confirm') --}}
+                                    @include('BJMP.admin.recyclebin.pdl.modal._download') --}}
 
                                     <a class="btn btn-sm  btn-outline-danger" href="" data-toggle="modal"
                                         data-target="#delete{{ $record->id }}"> <i class="fas fa-trash-alt"></i></a>

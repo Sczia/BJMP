@@ -29,7 +29,7 @@
 
                       <tr>
                         <td class="text-left">Birthdate:</td>
-                        <td class="text-left">{{ $record->birthdate }}</td>
+                        <td class="text-left">{{ $record->birth_date }}</td>
                       </tr>
 
                       <tr>

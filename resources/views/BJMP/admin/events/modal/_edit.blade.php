@@ -45,9 +45,9 @@
                             <select class="form-control" aria-label="Default select example" name="color" id="color">
                                 <option selected value="{{ $event->color }}"
                                     style="background-color: {{ $event->color }}; color: #636060">Dafault</option>
-                                <option value="#c72121" style="background-color: #c72121">Red</option>
-                                <option value="#21dc6c" style="background-color: #21dc6c">Green</option>
-                                <option value="#3e4acc" style="background-color: #3e4acc">Blue</option>
+                                <option value="c72121" style="background-color: #c72121">Red</option>
+                                <option value="21dc6c" style="background-color: #21dc6c">Green</option>
+                                <option value="3e4acc" style="background-color: #3e4acc">Blue</option>
                             </select>
                         </div>
                     </div>

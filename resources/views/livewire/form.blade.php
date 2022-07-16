@@ -216,7 +216,7 @@
                                 <label for="prisoner_name" class="text-dark h5 fw-normal form-title">Prisnoer name <span
                                         class="text-danger">*</span></label>
                                 <input class="form-control @error('prisoner_name') is-invalid @enderror" type="text"
-                                    name="prisoner_name" id="prisoner_name" placeholder="Prisoner's Naame"
+                                    name="prisoner_name" id="prisoner_name" placeholder="Prisoner's Name"
                                     wire:model="prisoner_name">
                                 @error('prisoner_name')
                                     <span class="invalid-feedback" role="alert">
@@ -375,7 +375,7 @@
                                     <label for="runny"
                                         class="@error('q2') is-invalid @enderror d-flex align-items-center"><input
                                             class="radio-col " type="radio" name="q2" id="runny"
-                                            value="Runny Noset" wire:model="q2">&nbspRunny Noset
+                                            value="Runny Noset" wire:model="q2">&nbspRunny Nose
                                     </label>
                                     <label for="shrotness"
                                         class="@error('q2') is-invalid @enderror d-flex align-items-center"><input

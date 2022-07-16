@@ -117,9 +117,9 @@
             </div>
 
             <div class="middle-bar">
-                <hr>
-                <h2>Medical Record</h2>
-                <hr>
+
+                <h2 class="text-center mb-4 mt-5">Pdl Record</h2>
+
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered" id="medical">
@@ -140,7 +140,7 @@
                             <tr>
 
                                 <td>{{ $record->name }}</td>
-                                <td>{{ $record->birthdate }}</td>
+                                <td>{{ $record->birth_date }}</td>
                                 <td>{{ $record->address }}</td>
                                 <td>{{ $record->date_of_commitment }}</td>
                                 <td>{{ $record->offense }}</td>

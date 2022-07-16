@@ -90,6 +90,7 @@
     font-family: 'Poppins', sans-serif !important;
     margin-left: auto;
     margin-right: auto;
+
 }
 </style>
 
@@ -108,7 +109,7 @@
                 <div class="page-title w-50">
                     <h2 class="text-center">Republic of the Philippines</h2>
                     <hr>
-                    <h2 class="text-center">Municipal Jail of Los Baños Laguna</h2>
+                    <h2 class="text-center ">Municipal Jail of Los Baños Laguna</h2>
                     <!--      <h2 class="text-center">Los Baños Laguna</h2> -->
                 </div>
                 <div class="logo">
@@ -117,9 +118,9 @@
             </div>
 
             <div class="middle-bar">
-                <hr>
-                <h2>Medical Record</h2>
-                <hr>
+
+                <h2 class="text-center mb-4 mt-5">Medical Record</h2>
+
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered" id="medical">
@@ -140,7 +141,7 @@
                             <tr>
 
                                 <td>{{ $record->name }}</td>
-                                <td>{{ $record->birthdate }}</td>
+                                <td>{{ $record->birth_date }}</td>
                                 <td>{{ $record->age }}</td>
                                 <td>{{ $record->address }}</td>
                                 <td>{{ $record->emergency_contact }}</td>

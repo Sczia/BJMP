@@ -63,7 +63,7 @@
 
                       <tr>
                         <td class="text-left">Date:</td>
-                        <td class="text-left"{{ $appointment->date }}</td>
+                        <td class="text-left">{{ $appointment->date }}</td>
                       </tr>
 
                       <tr>

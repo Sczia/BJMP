@@ -29,7 +29,7 @@
 
                           <tr>
                             <td class="text-left">Birthdate:</td>
-                            <td class="text-left">{{ $record->birthdate }}</td>
+                            <td class="text-left">{{ $record->birth_date }}</td>
                           </tr>
 
                           <tr>
@@ -94,6 +94,8 @@
 
                     </tbody>
                   </table>
+                {{--   <a href="{{ route('pdl.download', $record->id) }}" class="btn btn-sm btn-success">EXPORT WORD </a> --}}
+
 
             </div>
             <div class=="modal-footer">

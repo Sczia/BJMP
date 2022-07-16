@@ -4,6 +4,8 @@
         <div class="col">
             <h1 class="h3 mb-4 text-gray-800">Medical Record</h1>
         </div>
+
+
         <div class="col">
             <div class="d-flex justify-content-end">
                 <a type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#add">
@@ -13,7 +15,10 @@
                 <a href="{{ route('medical.create') }}" class="btn btn-success mr-3">
                     <span class="d-flex align-items-center"><i class="fa-solid fa-file-pdf"></i>&#160; print</span>
                 </a>
-                
+                <a href="{{ route('export.medcial') }}" class="btn btn-warning mr-3">
+                    <span class="d-flex align-items-center"><i class="fa-solid fa-file-excel"></i>&#160; excel</span>
+                </a>
+
                 @include('BJMP.admin.records.medical.modal._add')
 
             </div>

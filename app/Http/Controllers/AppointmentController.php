@@ -103,11 +103,18 @@ class AppointmentController extends Controller
         ];
 
         $data = [
-            'api_key' => '24uYdd3CINZrkd4yyWCY8qh0MuK', // API KEY
-            'api_secret' => 'GwtTzi1W9hJSUG6VZrRZVRKdif3cjHJLrvNIej13', // API SECRET
+
+            'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
+            'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
+            'text' => "Hello! I would like to say that your Request Appointment has been cancel, kindly check our website for more schedule Thank you",
+            'to' =>   "63" . Str::substr($appointment->phone_number, 1, 10), // replace with mobile number ng sesendan
+            'from' => "MOVIDER"
+
+          /*   'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
+        'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
             'to' =>   "63" . Str::substr($appointment->phone_number, 1, 10), // replace with mobile number ng sesendan
             'text' => "Congratulations your appointment has been approved. Thank you!", // Text message mo
-            'from' => "Mail from Municipal Jail of Los Banos" // Y0u need paid account para palitan ito.
+            'from' => "Mail from Municipal Jail of Los Banos" */ // Y0u need paid account para palitan ito.
         ];
         try {
             $response = Http::asForm()->post('https://api.movider.co/v1/sms', $data);

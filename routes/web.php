@@ -8,6 +8,8 @@ use App\Http\Controllers\ConfirmController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\ExcelController;
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\HealthController;
 use App\Http\Controllers\homeContents;
 use App\Http\Controllers\MailController;
@@ -19,12 +21,14 @@ use App\Http\Controllers\PdlRecyclebinController;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SMS;
+use App\Http\Controllers\UserController;
 use App\Mail\Email;
 use App\Mail\WelcomeMail;
 use App\Models\Appointment;
 use App\PdlRecyclebin;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -76,7 +80,6 @@ Route::get('admin/medical', [MedicalController::class, 'index'])->name('medical.
 Route::put('/medical/{id}', [MedicalController::class, 'update'])->name('medical.update');
 Route::post('admin/medical', [MedicalController::class, 'store'])->name('medical.store');
 Route::delete('admin/medical/{id}', [MedicalController::class, 'destroy'])->name('medical.destroy');
-
 Route::get('admin/medical/download', [MedicalController::class, 'create'])->name('medical.create');
 
 
@@ -85,7 +88,6 @@ Route::get('admin/pdl', [PdlController::class, 'index'])->name('pdl.index');
 Route::put('/pdl/{id}', [PdlController::class, 'update'])->name('pdl.update');
 Route::post('admin/pdl', [PdlController::class, 'store'])->name('pdl.store');
 Route::delete('admin/pdl/{id}', [PdlController::class, 'destroy'])->name('pdl.destroy');
-
 Route::get('admin/pdl/download', [PdlController::class, 'create'])->name('pdl.create');
 
 
@@ -93,11 +95,15 @@ Route::get('admin/pdl/download', [PdlController::class, 'create'])->name('pdl.cr
 Route::get('admin/recyclebin/medical', [MedicalRecyclebinController::class, 'index'])->name('medical.recyclebin.index');
 Route::post('admin/recyclebin/medical', [MedicalRecyclebinController::class, 'store'])->name('medical.recyclebin.store');
 Route::delete('/admin/recyclebin/medical/{id}', [MedicalRecyclebinController::class, 'destroy'])->name('medical.recyclebin.destroy');
+Route::get('admin/recyclebin/medical/download', [MedicalRecyclebinController::class, 'download'])->name('medical.recyclebin.create');
+
 
 //RECYCLEBIN PDL//
 Route::get('admin/recyclebin/pdl', [PdlRecyclebinController::class, 'index'])->name('pdl.recyclebin.index');
 Route::post('admin/recyclebin/pdl', [PdlRecyclebinController::class, 'store'])->name('pdl.recyclebin.store');
 Route::delete('/admin/recyclebin/pdl/{id}', [PdlRecyclebinController::class, 'destroy'])->name('pdl.recyclebin.destroy');
+Route::get('admin/recyclebin/pdl/download', [PdlRecyclebinController::class, 'create'])->name('pdl.recyclebin.create');
+
 
 /* ATTENDAMCE */
 Route::get('admin/Attendance', [AttendanceController::class, 'index'])->name('attendance.index');
@@ -146,3 +152,11 @@ Route::get('download/pdl/{id}', [PdlController::class, 'download'])->name('pdl.d
 Route::get('login', [LoginController::class, 'index'])->name('login.index');
 Route::post('login/user', [LoginController::class, 'authenticate'])->name('login.user');
 Route::post('logout/user',  [LoginController::class, 'logout'])->name('logout.user');
+
+
+/* EXCEL */
+Route::controller(ExportController::class)->group(function () {
+    Route::get('/export/medical', 'Medical')->name('export.medcial');
+    Route::get('/export/pdl', 'Pdl')->name('export.pdl');
+
+});
