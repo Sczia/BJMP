@@ -39,10 +39,6 @@ class LoginController extends Controller
     {
         return view('BJMP.homeContents.login');
     }
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
@@ -50,7 +46,7 @@ class LoginController extends Controller
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+        if (Auth::guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             $request->session()->regenerate();
             return redirect()->intended(route('admin'));
         }
@@ -61,7 +57,7 @@ class LoginController extends Controller
     }
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('admin')->logout();
 
         $request->session()->invalidate();
 

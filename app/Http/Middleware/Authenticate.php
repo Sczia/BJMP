@@ -17,11 +17,11 @@ class Authenticate extends Middleware
     {
         if (! $request->expectsJson()) {
             if ($request->routeIs('admin')) {
-                if (Auth::check()) {
+                if (Auth::guard('admin')->check()) {
                     return redirect()->route('admin');
                 }
             }
-            return redirect()->route('login.index');
         }
+        return redirect()->route('login.index');
     }
 }
