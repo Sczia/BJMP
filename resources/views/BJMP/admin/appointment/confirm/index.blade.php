@@ -14,7 +14,7 @@
                             <th>Contact number</th>
                             <th>Health Poll</th>
                             <th>More Info</th>
-                            {{-- <th>Action</th> --}}
+
                         </tr>
                     </thead>
 
@@ -23,17 +23,14 @@
                             <tr>
 
 
-                                <td>{{ $appointment->first_name }} {{ $appointment->last_name }} {{ $appointment->middle_name }}</td>
+                                <td>{{ $appointment->first_name }} {{ $appointment->last_name }}
+                                    {{ $appointment->middle_name }}</td>
                                 <td>{{ $appointment->date }}</td>
                                 <td>{{ $appointment->prisoner_name }}</td>
                                 <td>{{ $appointment->prisoner_relationship }}</td>
                                 <td>{{ $appointment->phone_number }}</td>
                                 <td>{{ $appointment->health_poll }}</td>
-{{--
-                             <td>{{ $appointment->age }}</td>
-                                <td>{{ $appointment->gender }}</td>
-                                <td>{{ $appointment->email }}</td>
-                                <td>{{ $appointment->address }}</td> --}}
+
 
 
 
@@ -47,26 +44,15 @@
                                     @include('BJMP.admin.appointment.confirm.modal._show')
 
                                     <a class="btn btn-sm btn-outline-success" href="" data-toggle="modal"
-                                    data-target="#view{{ $appointment->id }}"><i class="fa-solid fa-hospital-user"></i></a>
-                                @include('BJMP.admin.appointment.confirm.modal._view')
+                                        data-target="#view{{ $appointment->id }}"><i
+                                            class="fa-solid fa-hospital-user"></i></a>
+                                    @include('BJMP.admin.appointment.confirm.modal._view')
                                 </td>
 
-                               {{--  <td class="d-flex justify-content-center align-items-center">
-                                    <a class="btn btn-sm  btn-outline-success mr-1" href="" data-toggle="modal"
-                                        data-target="#confirm{{ $appointment->id }}"> <i
-                                            class="fas fa-check-square"></i></a>
-                                    @include('BJMP.admin.appointment.confirm.modal._confirm')
-
-
-                                    <a class="btn btn-sm  btn-outline-danger mr-1" href="" data-toggle="modal"
-                                        data-target="#cancel{{ $appointment->id }}"> <i
-                                            class="fas fa-window-close"></i></a>
-                                    @include('BJMP.admin.appointment.confirm.modal._cancel')
-                                </td> --}}
+                               
 
 
                             </tr>
-
                         @endforeach
 
 
@@ -77,8 +63,6 @@
             </div>
         </div>
     </div>
-
-
 @endsection
 
 @section('page-level-javascript')
@@ -87,7 +71,4 @@
             $('#confirm').DataTable();
         });
     </script>
-
-
-
 @endsection

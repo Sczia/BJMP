@@ -12,7 +12,7 @@
     <title>Admin Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link rel="stylesheet" href="{{asset('./css/admin.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome-free-6.0.0-web/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}">
 
@@ -127,7 +127,7 @@
     <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
     <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script> --}}
+   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script> 
 
     @yield('page-level-javascript')
 </body>

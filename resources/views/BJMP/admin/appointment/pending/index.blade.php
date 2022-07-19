@@ -30,25 +30,17 @@
                                 <td>{{ $appointment->phone_number }}</td>
                                 <td>{{ $appointment->health_poll }}</td>
 
-                               {{--  <td class="text-center">
-                                    <a class="btn btn-sm btn-outline-primary" href="" data-toggle="modal"
-                                        data-target="#view{{ $appointment->id }}"><i class="fas fa-eye"></i></a>
-                                    @include( 'BJMP.admin.appointment.pending.modal._show')
-
-                                    <a class="btn btn-sm btn-outline-primary" href="" data-toggle="modal"
-                                        data-target="#view{{ $appointment->id }}"><i class="fa-solid fa-hospital-user"></i></a>
-                                    @include( 'BJMP.admin.appointment.pending.modal._view')
-                                </td> --}}
-
+                                
 
                                 <td class="text-center  ">
                                     <a class="btn btn-sm btn-outline-primary mb-1" href="" data-toggle="modal"
-                                    data-target="#show{{ $appointment->id }}"><i class="fas fa-eye"></i></a>
-                                @include('BJMP.admin.appointment.pending.modal._show')
+                                        data-target="#show{{ $appointment->id }}"><i class="fas fa-eye"></i></a>
+                                    @include('BJMP.admin.appointment.pending.modal._show')
 
-                                <a class="btn btn-sm btn-outline-success" href="" data-toggle="modal"
-                                data-target="#view{{ $appointment->id }}"><i class="fa-solid fa-hospital-user"></i></a>
-                            @include('BJMP.admin.appointment.pending.modal._view')
+                                    <a class="btn btn-sm btn-outline-success" href="" data-toggle="modal"
+                                        data-target="#view{{ $appointment->id }}"><i
+                                            class="fa-solid fa-hospital-user"></i></a>
+                                    @include('BJMP.admin.appointment.pending.modal._view')
                                 </td>
 
 

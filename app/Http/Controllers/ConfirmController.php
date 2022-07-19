@@ -84,9 +84,13 @@ class ConfirmController extends Controller
 
             $confirm->save();
             $details = [
-                'title' => 'Mail from Municipal Jail of Los Banos',
-                'body' => 'Congratulations your appointment has been approved.  Thank you!'
-
+                'name' => $appointment->first_name.' '.$appointment->middle_name.', '.$appointment->last_name,
+                'age' =>  $appointment->age,
+                'address' => $appointment->address,
+                'date' => $appointment->date,
+                'prisoner_name' => $appointment->prisoner_name,
+                'relationship' => $appointment->prisoner_relationship,
+                'number' => $appointment->phone_number,
             ];
 
             $data = [

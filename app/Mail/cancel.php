@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class WelcomeMail extends Mailable
+class cancel extends Mailable
 {
     use Queueable, SerializesModels;
     public $details;
@@ -28,7 +28,7 @@ class WelcomeMail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_USERNAME'))->subject('Municipal Jail of Los Banos Laguna')->markdown('emails.welcome',['details'=>$this->details]);
+        return $this->from(env('MAIL_USERNAME'))->subject('Municipal Jail of Los Banos Laguna')->markdown('emails.cancel',['details'=>$this->details]);
 
     }
 }

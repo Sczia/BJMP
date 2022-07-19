@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\cancel;
 use App\Mail\WelcomeMail;
 use App\Models\Appointment;
 use App\Models\Contact;
@@ -93,39 +94,48 @@ class AppointmentController extends Controller
      */
     public function destroy(Request $request)
     {
+        try {
+            $id = $request->input('id');
+            $appointment = Appointment::findOrFail($id);
 
-        $id = $request->input('id');
-        $appointment = Appointment::findOrFail($id);
-        $details = [
-            'title' => 'Mail from Municipal Jail of Los Banos',
-            'body' => 'Sorry your appointment is not approved, maybe your chosen Dorm is not fit to the given schedule, Kindly wait for the vacancy of the schedule and check our official website for more information. Thank you and Stay safe!'
+            $details = [
+                'name' => $appointment->first_name . ' ' . $appointment->middle_name . ', ' . $appointment->last_name,
+                'age' =>  $appointment->age,
+                'address' => $appointment->address,
+                'date' => $appointment->date,
+                'prisoner_name' => $appointment->prisoner_name,
+                'relationship' => $appointment->prisoner_relationship,
+                'number' => $appointment->phone_number,
+            ];
 
-        ];
+            $data = [
 
-        $data = [
+                'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
+                'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
+                'text' => "Hello! I would like to say that your Request Appointment has been cancel, kindly check our website for more schedule Thank you",
+                'to' =>   "63" . Str::substr($appointment->phone_number, 1, 10), // replace with mobile number ng sesendan
+                'from' => "MOVIDER"
 
-            'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
-            'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
-            'text' => "Hello! I would like to say that your Request Appointment has been cancel, kindly check our website for more schedule Thank you",
-            'to' =>   "63" . Str::substr($appointment->phone_number, 1, 10), // replace with mobile number ng sesendan
-            'from' => "MOVIDER"
-
-          /*   'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
+                /*   'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
         'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
             'to' =>   "63" . Str::substr($appointment->phone_number, 1, 10), // replace with mobile number ng sesendan
             'text' => "Congratulations your appointment has been approved. Thank you!", // Text message mo
             'from' => "Mail from Municipal Jail of Los Banos" */ // Y0u need paid account para palitan ito.
-        ];
-        try {
+            ];
+
             $response = Http::asForm()->post('https://api.movider.co/v1/sms', $data);
-            Mail::to($appointment->email)->send(new WelcomeMail($details));
+            Mail::to($appointment->email)->send(new cancel($details));
+            $appointment->delete();
+            toast()->info('Info', 'You deleted the request')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            return redirect()->back();
         } catch (\Throwable $th) {
-            dd($th);
+            toast()->warning('Warning', $th->getMessage())->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
+            return redirect()->back();
         }
 
 
 
-        $appointment->delete();
+
         return redirect()->route('pending.index');
     }
 }

@@ -3,10 +3,10 @@
         <div class="card text-black bg-default">
             <img class="card-img-top" src="holder.js/100px180/" alt="">
             <div class="card-body">
-                <b>{{ request()->name }}</b>
+
                 Please wait for the confirmation of your schedule, Kindly check your
                 Email and your SMS for the verification of your request.
-                <b>{{ request()->email }}</b>
+              
                 </br>Thank you </br></br>
                 <a href="{{ route('landing') }}" class="btn btn-sm btn-success">Back to home</a>
             </div>
