@@ -43,14 +43,6 @@ use Nexmo\Laravel\Facade\Nexmo;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/sms/send', function () {
-    Nexmo::message()->send([
-        'to'   => '639512370553',
-        'from' => '09512370553',
-        'text' => 'Using the facade to send a message.'
-    ]);
-});
 //home//
 Route::get('/', [homeContents::class, 'opener'])->name('opener');
 Route::get('/home', [homeContents::class, 'landing'])->name('landing');

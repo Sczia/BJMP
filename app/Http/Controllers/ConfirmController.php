@@ -11,6 +11,7 @@ use App\Models\Contact;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class ConfirmController extends Controller
 {
@@ -84,7 +85,7 @@ class ConfirmController extends Controller
 
             $confirm->save();
             $details = [
-                'name' => $appointment->first_name.' '.$appointment->middle_name.', '.$appointment->last_name,
+                'name' => $appointment->first_name . ' ' . $appointment->middle_name . ', ' . $appointment->last_name,
                 'age' =>  $appointment->age,
                 'address' => $appointment->address,
                 'date' => $appointment->date,
@@ -92,24 +93,11 @@ class ConfirmController extends Controller
                 'relationship' => $appointment->prisoner_relationship,
                 'number' => $appointment->phone_number,
             ];
-
-            $data = [
-                'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
-                'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
-                'text' => "Hello! Congratulations your Request Appointment has been approved. ",
-                'to' =>   "63" . Str::substr($confirm->phone_number, 1, 10), // replace with mobile number ng sesendan
-                'from' => "MOVIDER"
-
-
-              /*   'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
-                'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
-                'to' =>   "63" . Str::substr($confirm->phone_number, 1, 10), // replace with mobile number ng sesendan
-                'text' => "Congratulations your appointment has been approved. ", // Text message mo
-                'from' => "Mail from Municipal Jail of Los Banos" / */ // Y0u need paid account para palitan ito.
-            ];
-
-
-            $response = Http::asForm()->post('https://api.movider.co/v1/sms', $data);
+            $response = Nexmo::message()->send([
+                'to'   => "63" . Str::substr($appointment->phone_number, 1, 10),
+                'from' => '09512370553',
+                'text' => "Hello! Congratulations your Request Appointment has been approved. "
+            ]);
             Mail::to($request->input('email'))->send(new WelcomeMail($details));
 
             $pending = Appointment::findOrFail($id);

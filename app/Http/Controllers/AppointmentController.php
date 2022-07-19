@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Nexmo\Laravel\Facade\Nexmo;
 use PhpParser\Node\Stmt\TryCatch;
 
 class AppointmentController extends Controller
@@ -107,23 +108,12 @@ class AppointmentController extends Controller
                 'relationship' => $appointment->prisoner_relationship,
                 'number' => $appointment->phone_number,
             ];
+            $response = Nexmo::message()->send([
+                'to'   => "63" . Str::substr($appointment->phone_number, 1, 10),
+                'from' => '09512370553',
+                'text' => "Hello! I would like to say that your Request Appointment has been cancel, kindly check our website for more schedule Thank you"
+            ]);
 
-            $data = [
-
-                'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
-                'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
-                'text' => "Hello! I would like to say that your Request Appointment has been cancel, kindly check our website for more schedule Thank you",
-                'to' =>   "63" . Str::substr($appointment->phone_number, 1, 10), // replace with mobile number ng sesendan
-                'from' => "MOVIDER"
-
-                /*   'api_key' => "2BWiJ9Bke4zGymsjOTS5CaebKki",
-        'api_secret' => "x52BicQo6crbVYufk509UcgxyrfBFJsPoFyxY0kF",
-            'to' =>   "63" . Str::substr($appointment->phone_number, 1, 10), // replace with mobile number ng sesendan
-            'text' => "Congratulations your appointment has been approved. Thank you!", // Text message mo
-            'from' => "Mail from Municipal Jail of Los Banos" */ // Y0u need paid account para palitan ito.
-            ];
-
-            $response = Http::asForm()->post('https://api.movider.co/v1/sms', $data);
             Mail::to($appointment->email)->send(new cancel($details));
             $appointment->delete();
             toast()->info('Info', 'You deleted the request')->autoClose(3000)->animation('animate__fadeInRight', 'animate__fadeOutRight')->width('400px');
