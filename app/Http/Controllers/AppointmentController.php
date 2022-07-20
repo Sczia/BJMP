@@ -111,7 +111,7 @@ class AppointmentController extends Controller
             $response = Nexmo::message()->send([
                 'to'   => "63" . Str::substr($appointment->phone_number, 1, 10),
                 'from' => '09512370553',
-                'text' => "Hello! I would like to say that your Request Appointment has been cancel, kindly check our website for more schedule Thank you"
+                'text' => "Hello! I would like to say that your Requested Appointment has been canceled. Please kindly check our website for more schedules and information. Thank you and stay safe!"
             ]);
 
             Mail::to($appointment->email)->send(new cancel($details));

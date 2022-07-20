@@ -96,7 +96,7 @@ class ConfirmController extends Controller
             $response = Nexmo::message()->send([
                 'to'   => "63" . Str::substr($appointment->phone_number, 1, 10),
                 'from' => '09512370553',
-                'text' => "Hello! Congratulations your Request Appointment has been approved. "
+                'text' => "Good Day! Congratulations, your request for an appointment on the BJMP Los Banos has been approved. Kindly check your email for the confirmation and make a screenshot of it as proof. Thank you and stay safe! "
             ]);
             Mail::to($request->input('email'))->send(new WelcomeMail($details));
 
