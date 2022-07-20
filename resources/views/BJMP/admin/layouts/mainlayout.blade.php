@@ -96,8 +96,8 @@
                 <form action="{{ route('logout.user') }}" method="post">
                     @csrf
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <button class="btn btn-primary" type="submit">Logout</button>
+                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-success" type="submit">Logout</button>
                     </div>
                 </form>
             </div>
@@ -127,7 +127,7 @@
     <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
     <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script> 
+   <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     @yield('page-level-javascript')
 </body>

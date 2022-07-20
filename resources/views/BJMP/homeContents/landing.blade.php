@@ -256,7 +256,7 @@
                     </div>
                     <div class="info-container">
                         <div class="info-container-left">
-                            <a href="./appform.html">
+                            <a href="{{ route('guidlines') }}">
                                 <i class="fa-solid fa-calendar-check"></i>
                                 <span>Appointment Form / </span>
                             </a>
