@@ -5,13 +5,7 @@
 
 <p>Note: Please take a screenshot of this message</p>
 
-Name:  {{ $details['name'] }} <br>
-Age:  {{ $details['age'] }} <br>
-Address:  {{ $details['address'] }} <br>
-Date:  {{ $details['date'] }} <br>
-Prisoner name: {{ $details['prisoner_name'] }} <br>
-Relationship to the prisoner:  {{ $details['relationship'] }} <br>
-Phone number:  {{ $details['number'] }} <br>
+<p>Hello! I would like to say that your Requested Appointment has been canceled. Please kindly check our website for more schedules and information. Thank you and stay safe!</p>
 
 Thanks you and stay safe!<br>
 {{ config('app.name') }}
